@@ -22,7 +22,6 @@ export default function Home() {
       <Spend />
       <Payment />
       <Benefit />
-      
       <Mobile />
       <Search />
       <Pricing />
