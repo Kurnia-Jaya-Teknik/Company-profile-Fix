@@ -61,7 +61,7 @@ const Mobile = () => {
           </div>
           <div className="text-center mt-8 flex justify-center">
             <Link
-              href="/partner"
+              href="/portfolio"
               className="inline-flex items-center gap-2 bg-primary text-white py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all font-semibold"
             >
               Lihat Portofolio Pekerjaan

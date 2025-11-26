@@ -23,7 +23,7 @@ const galleryImages = [
   "/Kontent/Foto Portofolio/P16.jpg",
 ];
 
-const Benefit = () => {
+const Documentation = () => {
   const ref = useRef(null);
   const inView = useInView(ref);
   const [imageErrors, setImageErrors] = useState<{ [key: string]: boolean }>({});
@@ -90,7 +90,7 @@ const Benefit = () => {
           </div>
           <div className="text-center mt-8">
             <Link
-              href="/partner"
+              href="/portfolio"
               className="inline-flex items-center gap-2 bg-primary text-white py-3 px-6 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition"
             >
               Lihat Portofolio Pekerjaan
@@ -102,4 +102,4 @@ const Benefit = () => {
   );
 };
 
-export default Benefit;
+export default Documentation;
