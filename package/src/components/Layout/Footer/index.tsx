@@ -41,11 +41,11 @@ const Footer = () => {
             </h3>
 
             <div className="flex items-center gap-3 justify-center md:justify-start">
-              <Icon icon="weui:location-outlined" className="w-6 h-6 text-red-500" />
+              <Icon icon="weui:location-outlined" className="w-[42px] h-[42px] text-red-500" />
               <Link
                 href="https://maps.app.goo.gl/rHXcn3mr2hpYdCLc7?g_st=ic"
                 target="_blank"
-                className="hover:text-red-400 transition"
+                className="hover:text-red-400 transition text-lg"
               >
                 Dusun Kemuning, Gambir Kuning, Kraton, Pasuruan – Jawa Timur
               </Link>
