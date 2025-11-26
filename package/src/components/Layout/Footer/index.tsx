@@ -1,81 +1,102 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { footerLinks } from "@/app/api/data";
 
 const Footer = () => {
   return (
-    <footer className="pt-12 mt-14 bg-midnight_text relative">
-      <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-2">
+    <footer className="relative mt-20 bg-[#1C1C1E] text-foottext pt-16 pb-10">
+      
+      {/* Decorative gradient line */}
+      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-red-500 via-gray-400 to-red-500" />
 
-        {/* ===================== LOGO + ABOUT US ===================== */}
-        <div className="flex flex-col items-center text-center mb-12">
-          <Image
-            src="/images/logo/logo.svg"
-            alt="Company Logo"
-            width={120}
-            height={120}
-            className="mb-4"
-          />
-          <p className="text-foottext text-16 max-w-xl">
-            Kami adalah perusahaan yang bergerak di bidang produksi dan inovasi
-            teknologi, berkomitmen memberikan kualitas terbaik dan layanan profesional
-            untuk setiap pelanggan kami.
-          </p>
-        </div>
+      <div className="container mx-auto px-4 lg:max-w-6xl">
 
-        {/* ===================== CONTACT + SOCIAL ===================== */}
-        <div className="flex flex-col border-b border-dark_border pb-14 mb-16">
-          <div className="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto">
-            
-            {/* Address */}
-            <div className="flex items-start justify-center gap-3 text-foottext text-16">
-              <Icon icon="weui:location-outlined" className="w-7 h-7 flex-shrink-0 mt-1" />
-              <Link 
+        {/* GRID 3 KOLOM */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+          {/* ========== 1. LOGO DI TENGAH & ABOUT ========== */}
+          <div className="flex flex-col items-center text-center">
+            <Image
+              src="/Kontent/LOGO 3.jpg"   // LOGO KOTAK
+              alt="Company Logo"
+              width={170}
+              height={170}
+              className="object-contain"
+              priority
+            />
+
+            <p className="mt-6 text-[15px] leading-relaxed text-gray-300 max-w-xs">
+              Kami adalah perusahaan yang bergerak di bidang 
+              <b> Mechanical, Electrical & Automation System</b>. 
+              Mengutamakan kualitas, ketepatan waktu, dan hubungan profesional.
+            </p>
+          </div>
+
+          {/* ========== 2. CONTACT INFO ========== */}
+          <div className="space-y-6 text-center md:text-left md:pl-6">
+            <h3 className="text-[18px] font-semibold text-gray-100 tracking-wide mb-2">
+              Kontak Kami
+            </h3>
+
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+              <Icon icon="weui:location-outlined" className="w-6 h-6 text-red-500" />
+              <Link
                 href="https://maps.app.goo.gl/rHXcn3mr2hpYdCLc7?g_st=ic"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="hover:text-red-400 transition"
               >
-                Dusun kemuning, RT.010/RW.004, Sawah, Gambir Kuning, Kraton, Pasuruan Regency, East Java
+                Dusun Kemuning, Gambir Kuning, Kraton, Pasuruan – Jawa Timur
               </Link>
             </div>
 
-            {/* Phone & Email */}
-            <div className="flex flex-wrap gap-8 justify-center">
-              <div className="flex items-center gap-2 text-foottext">
-                <Icon icon="majesticons:phone-retro-line" className="w-6 h-6" />
-                <Link href="tel:+6234356188810" className="text-16 hover:text-primary">
-                  (0343) 5618810
-                </Link>
-              </div>
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+              <Icon icon="majesticons:phone-retro-line" className="w-6 h-6 text-red-500" />
+              <Link href="tel:+6234356188810" className="hover:text-red-400 transition">
+                (0343) 5618810
+              </Link>
+            </div>
 
-              <div className="flex items-center text-foottext gap-2">
-                <Icon icon="clarity:email-line" className="w-6 h-6" />
-                <Link 
-                  href="https://mail.google.com/mail/?view=cm&to=kurniajayatek@gmail.com&su=Pesan%20dari%20Website%20Kurnia%20Jaya%20Teknik&body=Halo%20CV%20Kurnia%20Jaya%20Teknik,%20saya%20ingin%20menghubungi%20Anda%20melalui%20website."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-16 hover:text-primary"
-                >
-                  kurniajayatek@gmail.com
-                </Link>
-              </div>
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+              <Icon icon="clarity:email-line" className="w-6 h-6 text-red-500" />
+              <Link
+                href="mailto:kurniajayatek@gmail.com"
+                className="hover:text-red-400 transition"
+              >
+                kurniajayatek@gmail.com
+              </Link>
             </div>
           </div>
 
-          <div className="justify-center flex gap-4 mt-8">
-            <Link href="#" className="text-muted hover:text-primary">
-              <Icon icon="fe:facebook" width="32" height="32" />
-            </Link>
-            <Link href="#" className="text-muted hover:text-primary">
-              <Icon icon="fa6-brands:square-twitter" width="32" height="32" />
-            </Link>
-            <Link href="#" className="text-muted hover:text-primary">
-              <Icon icon="fa6-brands:linkedin" width="32" height="32" />
-            </Link>
+          {/* ========== 3. SOCIAL MEDIA ========== */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-[18px] font-semibold text-gray-100 tracking-wide mb-4">
+              Temukan Kami
+            </h3>
+
+            <div className="flex gap-5">
+              <Link href="#" className="hover:text-red-400 transition">
+                <Icon icon="ri:facebook-fill" width="32" height="32" />
+              </Link>
+              <Link href="#" className="hover:text-red-400 transition">
+                <Icon icon="fa6-brands:linkedin" width="32" height="32" />
+              </Link>
+              <Link href="#" className="hover:text-red-400 transition">
+                <Icon icon="fa6-brands:instagram" width="32" height="32" />
+              </Link>
+            </div>
           </div>
+
         </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-700 mt-14 pt-6"></div>
+
+        {/* COPYRIGHT */}
+        <p className="text-center text-sm text-gray-400">
+          © {new Date().getFullYear()} Kurnia Jaya Teknik. All rights reserved.
+        </p>
       </div>
     </footer>
   );

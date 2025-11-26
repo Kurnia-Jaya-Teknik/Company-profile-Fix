@@ -77,9 +77,9 @@ const Header: React.FC = () => {
         sticky ? "shadow-lg bg-white dark:bg-darkheader" : "shadow-none"
       }`}
     >
-      <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) flex justify-between lg:items-center xl:gap-16 lg:gap-8 px-4 py-6 relative">
+      <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) flex flex-col lg:flex-row items-center xl:gap-16 lg:gap-8 px-4 py-6">
         <Logo />
-        <nav className="hidden lg:flex items-center justify-center space-x-10 text-17 text-midnight_text absolute left-1/2 transform -translate-x-1/2">
+        <nav className="hidden lg:flex grow items-center justify-center space-x-10 text-17 text-midnight_text">
           {headerData.map((item, index) => (
             <HeaderLink key={index} item={item} />
           ))}

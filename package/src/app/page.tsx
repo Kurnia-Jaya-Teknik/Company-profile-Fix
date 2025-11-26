@@ -21,10 +21,14 @@ export default function Home() {
       <Solution />
       <Spend />
       <Payment />
-      <Benefit />
+      <div id="benefit">
+        <Benefit />
+      </div>
       <Mobile />
       <Search />
-      <Pricing />
+      <div id="pricing">
+        <Pricing />
+      </div>
     </main>
   );
 }
