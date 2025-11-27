@@ -11,8 +11,8 @@ interface HeroSubProps {
 const HeroSub: FC<HeroSubProps> = ({ title, breadcrumbLinks }) => {
   return (
       <section className="text-center bg-cover pt-36 pb-8 relative dark:bg-darkmode overflow-x-hidden">
-        <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4 relative z-1 flex justify-between">
-          <h2 className="text-midnight_text text-50 relative font-bold dark:text-white ">
+        <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4 relative z-1 flex flex-col sm:flex-row items-start sm:items-center justify-between">
+          <h2 className="text-midnight_text font-bold md:text-5xl sm:text-4xl text-3xl relative dark:text-white">
             {title}
           </h2>
           <Breadcrumb links={breadcrumbLinks} />

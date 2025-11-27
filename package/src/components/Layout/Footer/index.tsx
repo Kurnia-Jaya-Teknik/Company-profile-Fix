@@ -11,23 +11,24 @@ const Footer = () => {
       {/* Decorative gradient line */}
       <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-red-500 via-gray-400 to-red-500" />
 
-      <div className="container mx-auto px-4 lg:max-w-6xl">
+      <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
 
         {/* GRID 3 KOLOM */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 lg:gap-16">
 
           {/* ========== 1. LOGO DI TENGAH & ABOUT ========== */}
-          <div className="flex flex-col items-center text-center">
-            <Image
-              src="/Kontent/LOGO 3.jpg"   // LOGO KOTAK
-              alt="Company Logo"
-              width={170}
-              height={170}
-              className="object-contain"
-              priority
-            />
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mb-6">
+              <Image
+                src="/Kontent/LOGO 3.jpg"
+                alt="Company Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
 
-            <p className="mt-6 text-[15px] leading-relaxed text-gray-300 max-w-xs">
+            <p className="text-sm sm:text-[15px] leading-relaxed text-gray-300 max-w-xs">
               Kami adalah perusahaan yang bergerak di bidang 
               <b> Mechanical, Electrical & Automation System</b>. 
               Mengutamakan kualitas, ketepatan waktu, dan hubungan profesional.
@@ -35,34 +36,34 @@ const Footer = () => {
           </div>
 
           {/* ========== 2. CONTACT INFO ========== */}
-          <div className="space-y-6 text-center md:text-left md:pl-6">
-            <h3 className="text-[18px] font-semibold text-gray-100 tracking-wide mb-2">
+          <div className="space-y-5 text-center md:text-left">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-100 tracking-wide mb-6">
               Kontak Kami
             </h3>
 
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <Icon icon="weui:location-outlined" className="w-[42px] h-[42px] text-red-500" />
+            <div className="flex items-start gap-4 justify-center md:justify-start">
+              <Icon icon="weui:location-outlined" className="w-6 h-6 sm:w-7 sm:h-7 text-red-500 flex-shrink-0 mt-0.5" />
               <Link
                 href="https://maps.app.goo.gl/rHXcn3mr2hpYdCLc7?g_st=ic"
                 target="_blank"
-                className="hover:text-red-400 transition text-lg"
+                className="hover:text-red-400 transition-colors text-sm sm:text-[15px] leading-relaxed text-left max-w-xs"
               >
                 Dusun Kemuning, Gambir Kuning, Kraton, Pasuruan – Jawa Timur
               </Link>
             </div>
 
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <Icon icon="majesticons:phone-retro-line" className="w-6 h-6 text-red-500" />
-              <Link href="tel:+6285731000076" className="hover:text-red-400 transition">
+            <div className="flex items-center gap-4 justify-center md:justify-start">
+              <Icon icon="majesticons:phone-retro-line" className="w-6 h-6 sm:w-7 sm:h-7 text-red-500 flex-shrink-0" />
+              <Link href="tel:+6285731000076" className="hover:text-red-400 transition-colors text-sm sm:text-[15px]">
                 085731000076
               </Link>
             </div>
 
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <Icon icon="clarity:email-line" className="w-6 h-6 text-red-500" />
+            <div className="flex items-center gap-4 justify-center md:justify-start">
+              <Icon icon="clarity:email-line" className="w-6 h-6 sm:w-7 sm:h-7 text-red-500 flex-shrink-0" />
               <Link
                 href="mailto:kurniajayatek@gmail.com"
-                className="hover:text-red-400 transition"
+                className="hover:text-red-400 transition-colors text-sm sm:text-[15px]"
               >
                 kurniajayatek@gmail.com
               </Link>
@@ -71,19 +72,19 @@ const Footer = () => {
 
           {/* ========== 3. SOCIAL MEDIA ========== */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-[18px] font-semibold text-gray-100 tracking-wide mb-4">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-100 tracking-wide mb-6">
               Temukan Kami
             </h3>
 
             <div className="flex gap-5">
-              <Link href="#" className="hover:text-red-400 transition">
-                <Icon icon="ri:facebook-fill" width="32" height="32" />
+              <Link href="#" className="hover:text-red-400 hover:scale-110 transition-all duration-200">
+                <Icon icon="ri:facebook-fill" className="w-8 h-8 sm:w-9 sm:h-9" />
               </Link>
-              <Link href="#" className="hover:text-red-400 transition">
-                <Icon icon="fa6-brands:linkedin" width="32" height="32" />
+              <Link href="#" className="hover:text-red-400 hover:scale-110 transition-all duration-200">
+                <Icon icon="fa6-brands:linkedin" className="w-8 h-8 sm:w-9 sm:h-9" />
               </Link>
-              <Link href="#" className="hover:text-red-400 transition">
-                <Icon icon="fa6-brands:instagram" width="32" height="32" />
+              <Link href="#" className="hover:text-red-400 hover:scale-110 transition-all duration-200">
+                <Icon icon="fa6-brands:instagram" className="w-8 h-8 sm:w-9 sm:h-9" />
               </Link>
             </div>
           </div>

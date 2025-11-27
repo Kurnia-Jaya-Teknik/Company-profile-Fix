@@ -77,14 +77,16 @@ const Header: React.FC = () => {
         sticky ? "shadow-lg bg-white dark:bg-darkheader" : "shadow-none"
       }`}
     >
-      <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) flex flex-col lg:flex-row items-center xl:gap-16 lg:gap-8 px-4 py-6">
-        <Logo />
+      <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) flex items-center xl:gap-16 lg:gap-8 px-4 py-6">
+        <div className="flex-shrink-0">
+          <Logo />
+        </div>
         <nav className="hidden lg:flex grow items-center justify-center space-x-10 text-17 text-midnight_text">
           {headerData.map((item, index) => (
             <HeaderLink key={index} item={item} />
           ))}
         </nav>
-        <div className="flex items-center gap-4 ml-auto">
+        <div className="flex items-center gap-4 ml-auto lg:ml-0">
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -124,24 +126,25 @@ const Header: React.FC = () => {
       </div>
       <div
         ref={mobileMenuRef}
-        className={`lg:hidden fixed top-0 right-0  h-full w-full bg-white shadow-lg transform transition-transform duration-300 max-w-xs ${
-          navbarOpen ? "-translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-darkmode shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-hidden flex flex-col ${
+          navbarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-4">
-          <h2 className="text-lg font-bold text-midnight_text dark:text-midnight_text">
+        <div className="flex items-center justify-between p-5 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-primary/5 to-transparent">
+          <h2 className="text-xl font-bold text-midnight_text dark:text-white">
             Menu
           </h2>
           <button
             onClick={() => setNavbarOpen(false)}
             aria-label="Close mobile menu"
+            className="p-2 hover:bg-primary/10 rounded-full transition-all duration-200 hover:rotate-90"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              className="dark:text-midnight_text"
+              className="text-midnight_text dark:text-white"
             >
               <path
                 fill="none"
@@ -154,13 +157,27 @@ const Header: React.FC = () => {
             </svg>
           </button>
         </div>
-        <nav className="flex flex-col items-start p-4">
-          {headerData.map((item, index) => (
-            <MobileHeaderLink key={index} item={item} />
-          ))}
-
+        <nav className="flex-1 overflow-y-auto py-2 px-3">
+          <div className="space-y-1">
+            {headerData.map((item, index) => (
+              <div key={index}>
+                <MobileHeaderLink item={item} />
+                {index < headerData.length - 1 && (
+                  <div className="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+                )}
+              </div>
+            ))}
+          </div>
         </nav>
       </div>
+
+      {/* Overlay when mobile menu is open */}
+      {navbarOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          onClick={() => setNavbarOpen(false)}
+        />
+      )}
     </header>
   );
 };
