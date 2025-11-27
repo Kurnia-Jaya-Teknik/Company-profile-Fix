@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const TopAnimation = {
   initial: { opacity: 0, y: -30 },
@@ -63,50 +64,40 @@ const lisensiData = [
 
 const Lisensi = () => {
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
+  
+  const breadcrumbLinks = [
+    { href: "/", text: "Beranda" },
+    { href: "/lisensi", text: "Lisensi" },
+  ];
 
   return (
-    <section className="min-h-screen py-16 bg-white dark:bg-darkmode">
-      <div className="container mx-auto px-4">
+    <section className="min-h-screen pt-36 pb-12 bg-white dark:bg-darkmode">
+       <div className="container mx-auto px-4 max-w-6xl">
 
-        {/* Title */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 mt-12">
+        {/* Title and Breadcrumb */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 mt-8">
           <h1 className="font-bold md:text-5xl sm:text-4xl text-3xl text-midnight_text dark:text-white">
             Lisensi
           </h1>
-          <nav
-            className="mt-4 sm:mt-0 flex items-center text-lg text-gray-500 dark:text-gray-300"
-            aria-label="Breadcrumb"
-          >
-            <ol className="list-none p-0 inline-flex">
-              <li className="flex items-center">
-                <a href="/" className="hover:text-primary">
-                  Beranda
-                </a>
-                <span className="mx-2">&gt;</span>
-              </li>
-              <li className="flex items-center text-primary font-semibold">
-                Lisensi
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumb links={breadcrumbLinks} />
         </div>
 
         {/* Subtitle */}
-        <motion.div {...TopAnimation} className="items-start mb-12">
+        <motion.div {...TopAnimation} className="items-start mb-6">
           <h2 className="font-semibold md:text-35 sm:text-28 text-24 text-midnight_text dark:text-white text-center">
             Legalitas <span className="text-primary">Perusahaan</span>
           </h2>
         </motion.div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 justify-items-center">
           {lisensiData.map((item, idx) => (
             <div
               key={idx}
               onClick={() => setSelectedIdx(idx)}
               className="bg-white dark:bg-darkmode rounded-2xl shadow-md border border-gray-100 
-              dark:border-gray-700 p-6 flex flex-col items-center w-[320px] min-h-[380px]
-              hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer
+              dark:border-gray-700 p-5 flex flex-col items-center w-full max-w-[320px]
+              min-h-[340px] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer
               hover:border-primary/40"
             >
               <div className="w-full h-[220px] flex items-center justify-center overflow-hidden rounded-xl mb-4 bg-gray-50 dark:bg-gray-800">
