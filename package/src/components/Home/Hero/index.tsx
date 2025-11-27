@@ -7,7 +7,7 @@ import { Heroimage } from "@/app/api/data";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const sliderImages = ["/Kontent/Gambar 1.jpg", "/Kontent/Gambar 2.jpg", "/Kontent/Gambar 3.jpg"];
+  const sliderImages = ["/Kontent/Gambar 1.jpg", "/Kontent/Gambar 2.jpg", "/Kontent/Gambar 3.jpg", "/Kontent/Gambar 8.jpg", "/Kontent/Gambar 9.jpg", "/Kontent/Gambar 10.jpg"];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -61,17 +61,60 @@ const Hero = () => {
                 />
               </Link>
             </div>
+            {/* Slider and Trusted by for tablet/mobile */}
+            <div className="block lg:hidden mt-12">
+              <div className="relative w-full max-w-[360px] sm:max-w-[480px] aspect-[16/9] mx-auto flex items-center justify-center">
+                <Image
+                  src={sliderImages[currentSlide]}
+                  alt={`Gambar ${currentSlide + 1}`}
+                  width={360}
+                  height={202}
+                  className="rounded-2xl object-cover w-full h-full"
+                  style={{ width: "100%", height: "100%" }}
+                />
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {sliderImages.map((_, index) => (
+                    <span
+                      key={index}
+                      className={`h-2 w-8 rounded-full transition-all ${
+                        currentSlide === index ? "bg-primary" : "bg-white/40"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="mt-8">
+                <p className="text-18 text-muted dark:text-white dark:text-opacity-70 text-center mb-4">
+                  Trusted by
+                </p>
+                <div className="flex space-x-4 sm:space-x-6 justify-center w-full items-center flex-wrap gap-4">
+                  {Heroimage.map((item, index) => (
+                    <div key={index} className="flex items-center justify-center">
+                      <Image
+                        src={item.lightimage}
+                        alt={`Trusted partner ${index + 1}`}
+                        width={90}
+                        height={45}
+                        className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+                        style={{ maxHeight: "45px", maxWidth: "100px", width: "auto", height: "auto" }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </motion.div>
+          {/* Slider and Trusted by for desktop */}
           <motion.div
             {...rightAnimation}
             className="lg:col-span-6 col-span-12 pl-0 hidden lg:block"
           >
-            <div className="relative w-full max-w-[420px] aspect-[16/9] mx-auto flex items-center justify-center">
+            <div className="relative w-full max-w-[560px] aspect-[16/9] mx-auto flex items-center justify-center">
               <Image
                 src={sliderImages[currentSlide]}
                 alt={`Gambar ${currentSlide + 1}`}
-                width={420}
-                height={236}
+                width={560}
+                height={315}
                 className="rounded-2xl object-cover w-full h-full"
                 style={{ width: "100%", height: "100%" }}
               />
@@ -86,9 +129,8 @@ const Hero = () => {
                 ))}
               </div>
             </div>
-            
-            <div className="mt-20">
-              <p className="text-16 text-muted dark:text-white dark:text-opacity-70 text-center mb-4">
+            <div className="mt-26">
+              <p className="text-18 text-muted dark:text-white dark:text-opacity-70 text-center mb-4">
                 Trusted by
               </p>
               <div className="flex justify-center items-center gap-6 flex-wrap">
