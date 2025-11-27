@@ -32,7 +32,6 @@ const Hero = () => {
   };
   return (
     <section className="relative pt-28 mb-10 bg-cover bg-center dark:bg-darkmode">
-      <div className="w-full h-full absolute z-0 bg-heroBg rounded-b-[119px] -left-1/4 top-0 dark:bg-midnight_text"></div>
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) relative z-1 md:max-w-(--breakpoint-md) px-4">
         <div className="grid grid-cols-12 items-start">
           <motion.div {...leftAnimation} className="lg:col-span-6 col-span-12">
@@ -48,7 +47,7 @@ const Hero = () => {
             <p className="sm:text-19 text-16 text-muted dark:text-white dark:text-opacity-70 text-start lg:max-w-full sm:max-w-75%">
               Kami adalah penyedia peralatan listrik profesional di Jawa Timur dengan pengalaman bertahun-tahun. Melayani kebutuhan peralatan listrik untuk berbagai proyek dengan kualitas terbaik dan pelayanan yang memuaskan.
             </p>
-            <div className="flex items-center mt-12">
+            <div className="flex items-center mt-12 mb-6">
               <Link
                 href="/contact"
                 className="text-17 flex gap-2 items-center bg-primary text-white py-3 px-8 rounded-lg border-2 border-primary hover:bg-white hover:text-midnight_text dark:hover:text-white dark:hover:bg-transparent transition-all group"
@@ -134,16 +133,16 @@ const Hero = () => {
               <p className="text-18 text-muted dark:text-white dark:text-opacity-70 text-center mb-4">
                 Trusted by
               </p>
-              <div className="flex space-x-6 justify-center w-full items-center flex-wrap gap-4">
+              <div className="flex justify-center items-center gap-6 flex-wrap">
                 {Heroimage.map((item, index) => (
-                  <div key={index} className="flex items-center justify-center">
+                  <div key={index} className="flex items-center justify-center h-12">
                     <Image
                       src={item.lightimage}
                       alt={`Trusted partner ${index + 1}`}
-                      width={120}
-                      height={60}
-                      className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-                      style={{ maxHeight: "60px", maxWidth: "150px", width: "auto", height: "auto" }}
+                      width={100}
+                      height={50}
+                      className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                      style={{ maxHeight: "40px", width: "auto", height: "auto" }}
                     />
                   </div>
                 ))}

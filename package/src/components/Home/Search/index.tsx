@@ -68,7 +68,7 @@ const Search = () => {
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         <div
           ref={ref}
-          className="dark:bg-midnight_text bg-heroBg rounded-3xl p-2"
+          className="dark:bg-midnight_text bg-white rounded-3xl p-2 shadow-lg"
         >
           <motion.div
             {...TopAnimation}

@@ -76,9 +76,9 @@ const Business = () => {
   return (
     <section className="dark:bg-darkmode overflow-x-hidden py-14">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
-        <div className="bg-heroBg dark:bg-midnight_text rounded-3xl lg:px-16 px-4 py-12">
+        <div className="bg-white dark:bg-midnight_text rounded-3xl lg:px-16 px-4 py-12 shadow-lg">
           <div className="flex flex-col items-center text-center gap-3 mb-12">
-            <p className="text-14 uppercase tracking-[0.4em] text-muted dark:text-white">CV Kurnia Jaya Teknik</p>
+            {/* <p className="text-14 uppercase tracking-[0.4em] text-muted dark:text-white">CV Kurnia Jaya Teknik</p> */}
             <h2 className="md:text-35 sm:text-28 text-24 font-semibold text-midnight_text dark:text-white">
               <span className="text-primary">Bidang</span> Usaha
             </h2>

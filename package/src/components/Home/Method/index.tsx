@@ -37,7 +37,7 @@ const Method = () => {
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         <div
           ref={ref}
-          className="dark:bg-midnight_text bg-heroBg rounded-3xl py-16 sm:px-20 px-5"
+          className="dark:bg-midnight_text bg-white rounded-3xl py-16 sm:px-20 px-5 shadow-lg"
         >
           <motion.div {...TopAnimation} className="text-center">
             <h2 className="md:text-35 sm:text-28 text-24 text-midnight_text font-semibold mb-5 dark:text-white lg:max-w-full sm:max-w-75% mx-auto">

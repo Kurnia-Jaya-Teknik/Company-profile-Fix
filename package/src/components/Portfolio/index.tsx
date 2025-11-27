@@ -45,7 +45,7 @@ const Portfolio = () => {
       <div className="container lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4 mx-auto">
         <div
           ref={ref}
-          className="dark:bg-midnight_text bg-heroBg rounded-3xl md:py-20 py-10 2xl:pr-14 2xl:pl-20 sm:px-14 px-6"
+          className="dark:bg-midnight_text bg-white rounded-3xl md:py-20 py-10 2xl:pr-14 2xl:pl-20 sm:px-14 px-6 shadow-lg"
         >
           <motion.div {...TopAnimation} className="items-start mb-12 text-center">
             <p className="text-14 uppercase tracking-[0.4em] text-muted dark:text-white">

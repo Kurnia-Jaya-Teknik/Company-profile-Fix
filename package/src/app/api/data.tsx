@@ -19,19 +19,19 @@ export const Heroimage = [
 // payment
 export const PaymentImage = [
   {
-    image: "/images/benefit/pic.svg",
+    image: "/images/benefit/pic-red.svg",
     title: "Kualitas Terjamin",
     details:
       "Kami hanya menyediakan produk peralatan listrik dengan kualitas terbaik dan terpercaya untuk memastikan kepuasan pelanggan.",
   },
   {
-    image: "/images/benefit/contact.svg",
+    image: "/images/benefit/contact-red.svg",
     title: "Pelayanan Profesional",
     details:
       "Tim profesional kami siap memberikan pelayanan terbaik dan solusi yang tepat untuk setiap kebutuhan peralatan listrik Anda.",
   },
   {
-    image: "/images/benefit/setting.svg",
+    image: "/images/benefit/setting-red.svg",
     title: "Komitmen Kepuasan",
     details:
       "Kepuasan client adalah prioritas utama kami. Kami berkomitmen untuk memberikan pengalaman terbaik dalam setiap transaksi.",
@@ -41,13 +41,13 @@ export const PaymentImage = [
 // Beneifit
 export const BeneifitImage = [
   {
-    image: "/images/benefit/pic.svg",
+    image: "/images/benefit/pic-red.svg",
     alt: "Trusted brand",
     details:
       "Stop wasteful spend and save thousands with unlimited points and insights that maximize savings.",
   },
   {
-    image: "/images/benefit/contact.svg",
+    image: "/images/benefit/contact-red.svg",
     alt: "Trusted brand",
     details: "See where the company money is going in real time.",
   },
@@ -62,7 +62,7 @@ export const BeneifitImage = [
     details: "No more lost receipts and tedious paperwork.",
   },
   {
-    image: "/images/benefit/setting.svg",
+    image: "/images/benefit/setting-red.svg",
     alt: "Trusted brand",
     details:
       "It's an all-digital card designed for online, and even in-store shopping.",
