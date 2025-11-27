@@ -57,12 +57,14 @@ const About = () => {
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="bg-heroBg dark:bg-midnight_text rounded-2xl p-6 text-center">
             <div className="flex justify-center mb-4">
-              <Icon
-                icon="solar:medal-ribbons-star-bold"
-                width="48"
-                height="48"
-                className="text-primary"
-              />
+              <div className="w-20 h-20 bg-white dark:bg-darkmode rounded-full flex items-center justify-center shadow-lg">
+                <Icon
+                  icon="solar:check-circle-bold"
+                  width="48"
+                  height="48"
+                  color="#DC3545"
+                />
+              </div>
             </div>
             <h3 className="text-22 font-semibold text-midnight_text dark:text-white mb-3">
               Kualitas Terjamin
@@ -74,12 +76,14 @@ const About = () => {
 
           <div className="bg-heroBg dark:bg-midnight_text rounded-2xl p-6 text-center">
             <div className="flex justify-center mb-4">
-              <Icon
-                icon="solar:hand-stars-bold"
-                width="48"
-                height="48"
-                className="text-primary"
-              />
+              <div className="w-20 h-20 bg-white dark:bg-darkmode rounded-full flex items-center justify-center shadow-lg">
+                <Icon
+                  icon="solar:user-hand-up-bold"
+                  width="48"
+                  height="48"
+                  color="#DC3545"
+                />
+              </div>
             </div>
             <h3 className="text-22 font-semibold text-midnight_text dark:text-white mb-3">
               Pelayanan Profesional
@@ -91,12 +95,14 @@ const About = () => {
 
           <div className="bg-heroBg dark:bg-midnight_text rounded-2xl p-6 text-center">
             <div className="flex justify-center mb-4">
-              <Icon
-                icon="solar:map-point-bold"
-                width="48"
-                height="48"
-                className="text-primary"
-              />
+              <div className="w-20 h-20 bg-white dark:bg-darkmode rounded-full flex items-center justify-center shadow-lg">
+                <Icon
+                  icon="solar:heart-bold"
+                  width="48"
+                  height="48"
+                  color="#DC3545"
+                />
+              </div>
             </div>
             <h3 className="text-22 font-semibold text-midnight_text dark:text-white mb-3">
               Melayani Jawa Timur
