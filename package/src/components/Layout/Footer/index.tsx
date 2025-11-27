@@ -53,8 +53,8 @@ const Footer = () => {
 
             <div className="flex items-center gap-3 justify-center md:justify-start">
               <Icon icon="majesticons:phone-retro-line" className="w-6 h-6 text-red-500" />
-              <Link href="tel:+6234356188810" className="hover:text-red-400 transition">
-                (0343) 5618810
+              <Link href="tel:+6285731000076" className="hover:text-red-400 transition">
+                085731000076
               </Link>
             </div>
 

@@ -6,14 +6,14 @@ import VisionMission from "@/components/VisionMission";
 
 const About = () => {
   return (
-    <section className="dark:bg-darkmode overflow-x-hidden py-14">
+    <section className="dark:bg-darkmode overflow-x-hidden py-0">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         {/* Company Overview */}
-        <div className="bg-heroBg dark:bg-midnight_text rounded-3xl lg:px-16 px-4 py-12 mb-12">
+        <div className="bg-heroBg dark:bg-midnight_text rounded-3xl lg:px-6 px-2 py-0 mb-0">
           <div className="grid lg:grid-cols-2 items-center gap-12">
             <div>
-              <h2 className="md:text-35 sm:text-28 text-24 font-semibold text-midnight_text dark:text-white mb-6">
-                Tentang <span className="text-primary">Kami</span>
+              <h2 className="md:text-35 sm:text-28 text-24 font-semibold text-midnight_text dark:text-white m-0 text-center mb-6">
+                <span className="text-midnight_text dark:text-white">Tentang </span><span className="text-primary">Kami</span>
               </h2>
               <p className="text-base text-muted dark:text-white dark:text-opacity-70 mb-6 leading-relaxed whitespace-pre-line">
                 Dalam menjalankan usahanya, perusahaan kami mempunyai prinsip tanggung jawab dan kepercayaan, sehingga diharapkan mampu menciptakan hubungan yang efisien antara pihak internal perusahaan dalam hal ini anggota dan pihak eksternal perusahaan dalam hal ini pengguna jasa dan atau pihak yang ada kaitan hubungan kerja dengan perusahaan. Perusahaan kami memiliki tenaga ahli bersertifikasi dan berpengalaman. Komitmen CV. Kurnia Jaya Teknik untuk menyelesaikan setiap amanah pekerjaan yang telah dipercayakan tidak terlepas dari peran setiap anggota dalam melakukan perencanaan, pelaksanaan dan pengendalian proyek dengan sistem manajemen dan metode yang efektif serta memperhatikan standar K3 (Keselamatan Kesehatan Kerja) dan lingkungan kerja.
