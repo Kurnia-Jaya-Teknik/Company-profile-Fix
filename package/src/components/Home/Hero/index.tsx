@@ -50,14 +50,14 @@ const Hero = () => {
             <div className="flex items-center mt-12 mb-6">
               <Link
                 href="/contact"
-                className="text-17 flex gap-2 items-center bg-primary text-white py-3 px-8 rounded-lg border-2 border-primary hover:bg-white hover:text-midnight_text dark:hover:text-white dark:hover:bg-transparent transition-all group"
+                className="text-17 flex gap-2 items-center bg-primary text-white py-3 px-8 rounded-lg border-2 border-primary hover:bg-white hover:text-primary hover:shadow-lg transition-all duration-300 group"
               >
                 <span className="font-bold whitespace-nowrap">Hubungi Kami</span>
                 <Icon
                   icon="solar:alt-arrow-right-linear"
                   width="13"
                   height="13"
-                  className="group-hover:text-primary dark:group-hover:text-white transition-colors"
+                  className="transition-colors"
                 />
               </Link>
             </div>

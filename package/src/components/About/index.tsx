@@ -5,10 +5,10 @@ import VisionMission from "@/components/VisionMission";
 
 const About = () => {
   return (
-    <section className="dark:bg-darkmode overflow-x-hidden py-0">
+    <section className="dark:bg-darkmode overflow-x-hidden py-14">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         {/* Company Overview */}
-        <div className="bg-white dark:bg-midnight_text rounded-3xl lg:px-6 px-2 py-0 mb-0 shadow-lg">
+        <div className="bg-white dark:bg-midnight_text rounded-3xl lg:px-12 px-6 py-12 mb-12 shadow-lg">
           <div className="grid lg:grid-cols-2 items-center gap-12">
             <div>
               <h2 className="md:text-35 sm:text-28 text-24 font-semibold text-midnight_text dark:text-white m-0 text-center mb-6">
@@ -25,7 +25,7 @@ const About = () => {
               </p>
               <Link
                 href="/contact"
-                className="lg:text-17 flex gap-4 w-fit items-center bg-primary text-white py-2 px-4 lg:py-3 lg:px-8 rounded-lg mt-6 border border-primary hover:text-primary hover:bg-transparent transition-all"
+                className="lg:text-17 flex gap-4 w-fit items-center bg-primary text-white py-2 px-4 lg:py-3 lg:px-8 rounded-lg mt-6 border-2 border-primary hover:bg-white hover:text-primary hover:shadow-lg transition-all duration-300"
               >
                 Hubungi Kami
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -48,10 +48,16 @@ const About = () => {
         </div>
 
         {/* Vision & Mission */}
-        <VisionMission />
+        <div className="mb-12">
+          <VisionMission />
+        </div>
 
         {/* Company Values */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="mb-12">
+          <h2 className="md:text-35 sm:text-28 text-24 font-semibold text-midnight_text dark:text-white text-center mb-8">
+            <span className="text-primary">Nilai</span> Perusahaan
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white dark:bg-midnight_text rounded-2xl p-6 text-center shadow-md">
             <div className="flex justify-center mb-4">
               <div className="w-24 h-24 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center">
@@ -100,9 +106,10 @@ const About = () => {
             </p>
           </div>
         </div>
+        </div>
 
         {/* Services Overview */}
-        <div className="bg-white dark:bg-midnight_text rounded-3xl lg:px-16 px-4 py-12 shadow-lg">
+        <div className="bg-white dark:bg-midnight_text rounded-3xl lg:px-16 px-4 py-12 shadow-lg mb-12">
           <h2 className="md:text-35 sm:text-28 text-24 font-semibold text-midnight_text dark:text-white text-center mb-8">
             Bidang <span className="text-primary">Keahlian</span>
           </h2>

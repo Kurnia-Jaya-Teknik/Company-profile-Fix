@@ -143,13 +143,12 @@ const Pricing = () => {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all w-full font-semibold text-16 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white py-3 px-6 rounded-lg border-2 border-primary hover:bg-white hover:text-primary hover:shadow-lg transition-all duration-300 w-full font-semibold text-16"
                 >
                   <Icon
                     icon="solar:phone-calling-bold"
                     width="20"
                     height="20"
-                    className="text-white"
                   />
                   Hubungi Kami Sekarang
                 </Link>

@@ -18,7 +18,7 @@ const Solution = () => {
               </p>
               <Link
                 href="/about"
-                className="lg:text-17 flex gap-4 w-fit items-center bg-primary text-white py-2 px-4 lg:py-3 lg:px-8 rounded-lg mt-12 border border-primary hover:text-primary hover:bg-transparent mx-auto"
+                className="lg:text-17 flex gap-4 w-fit items-center bg-primary text-white py-2 px-4 lg:py-3 lg:px-8 rounded-lg mt-12 border-2 border-primary hover:bg-white hover:text-primary hover:shadow-lg transition-all duration-300 mx-auto"
               >
                 Pelajari Lebih Lanjut
                 <Icon

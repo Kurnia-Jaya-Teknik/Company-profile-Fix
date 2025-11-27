@@ -102,7 +102,7 @@ const Method = () => {
                   </p>
                   <Link
                     href="/contact"
-                    className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary "
+                    className="text-17 flex gap-2 items-center bg-primary text-white py-3 px-6 rounded-lg border-2 border-primary hover:bg-white hover:text-primary hover:shadow-lg transition-all duration-300"
                   >
                     Hubungi Kami
                     <Icon
@@ -136,7 +136,7 @@ const Method = () => {
                   </p>
                   <Link
                     href="/contact"
-                    className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary "
+                    className="text-17 flex gap-2 items-center bg-primary text-white py-3 px-6 rounded-lg border-2 border-primary hover:bg-white hover:text-primary hover:shadow-lg transition-all duration-300"
                   >
                     Hubungi Kami
                     <Icon
@@ -181,7 +181,7 @@ const Method = () => {
                   </p>
                   <Link
                     href="/contact"
-                    className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary "
+                    className="text-17 flex gap-2 items-center bg-primary text-white py-3 px-6 rounded-lg border-2 border-primary hover:bg-white hover:text-primary hover:shadow-lg transition-all duration-300"
                   >
                     Hubungi Kami
                     <Icon
