@@ -1,6 +1,6 @@
 import HeroSub from "@/components/SharedComponents/HeroSub";
 import Payment from "@/components/Home/Payment";
-import Benefit from "@/components/Home/Benefit";
+import Documentation from "@/components/Home/Documentation";
 import Spend from "@/components/Home/Spend";
 import { Metadata } from "next";
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ const Services = () => {
         breadcrumbLinks={breadcrumbLinks}
       />
       <Payment />
-      <Benefit />
+      <Documentation />
       <Spend />
     </>
   );

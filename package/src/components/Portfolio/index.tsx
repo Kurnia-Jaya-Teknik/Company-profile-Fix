@@ -24,7 +24,7 @@ const portfolioImages = [
   "/Kontent/Foto Portofolio/P16.jpg",
 ];
 
-const Partner = () => {
+const Portfolio = () => {
   const ref = useRef(null);
   const inView = useInView(ref);
 
@@ -111,5 +111,5 @@ const Partner = () => {
   );
 };
 
-export default Partner;
+export default Portfolio;
 
