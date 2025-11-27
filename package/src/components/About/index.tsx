@@ -13,7 +13,7 @@ const About = () => {
         {/*        COMPANY HEADER        */}
         {/* ============================ */}
         <div className="bg-heroBg dark:bg-midnight_text rounded-3xl flex flex-col items-center text-center py-12 px-6 mb-12 shadow-sm">
-          <h2 className="md:text-5xl text-3xl font-bold text-midnight_text dark:text-white mb-6">
+          <h2 className="font-bold md:text-5xl sm:text-4xl text-3xl text-midnight_text dark:text-white mb-6">
             Tentang <span className="text-primary">Kami</span>
           </h2>
 
