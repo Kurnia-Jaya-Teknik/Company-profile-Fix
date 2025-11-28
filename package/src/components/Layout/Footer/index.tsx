@@ -17,10 +17,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 lg:gap-16">
 
           {/* ========== 1. LOGO DI TENGAH & ABOUT ========== */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mb-6">
+          <div className="flex flex-col items-center text-center">
+            <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-60 md:h-60 mx-auto mb-3">
               <Image
-                src="/Kontent/LOGO 3.jpg"
+                src="/Kontent/Logo3.png"
                 alt="Company Logo"
                 fill
                 className="object-contain"
@@ -28,7 +28,7 @@ const Footer = () => {
               />
             </div>
 
-            <p className="text-sm sm:text-[15px] leading-relaxed text-gray-300 max-w-xs">
+            <p className="text-sm sm:text-[15px] leading-relaxed text-gray-300 max-w-xs text-justify">
               Kami adalah perusahaan yang bergerak di bidang 
               <b> Mechanical, Electrical & Automation System</b>. 
               Mengutamakan kualitas, ketepatan waktu, dan hubungan profesional.

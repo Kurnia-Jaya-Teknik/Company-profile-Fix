@@ -127,29 +127,25 @@ const Lisensi = () => {
         {/* Popup Modal tanpa background */}
         {selectedIdx !== null && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedIdx(null)} // klik area luar untuk close
+            className="fixed inset-0 z-50 flex items-center justify-center p-0"
+            onClick={() => setSelectedIdx(null)}
           >
-            <div
-              className="relative max-w-3xl w-full flex justify-center"
-              onClick={(e) => e.stopPropagation()} // supaya klik gambar tidak menutup
-            >
-              {/* Tombol close menempel di gambar */}
+            {/* Overlay blur + gelap */}
+            <div className="absolute inset-0 backdrop-blur-md bg-black/65" />
+            <div className="relative z-10" onClick={e => e.stopPropagation()}>
               <button
                 onClick={() => setSelectedIdx(null)}
-                className="absolute -top-3 -right-3 bg-white dark:bg-gray-700 
-                  text-gray-700 dark:text-white w-8 h-8 rounded-full shadow-md
-                  flex items-center justify-center hover:bg-red-500 hover:text-white transition-all"
+                className="absolute -top-4 -right-4 bg-red-500 text-white w-8 h-8 rounded-full shadow-md flex items-center justify-center hover:bg-red-600 transition-all"
+                aria-label="Close"
               >
                 ✕
               </button>
-
               <Image
                 src={lisensiData[selectedIdx].img}
                 alt="Preview"
                 width={1000}
                 height={700}
-                className="object-contain w-full max-h-[85vh] rounded-lg"
+                className="object-contain w-full max-h-[85vh] rounded-2xl shadow-lg"
               />
             </div>
           </div>
