@@ -120,27 +120,26 @@ const Lisensi = () => {
 
         {/* Popup Modal */}
         {selectedIdx !== null && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center 
-            bg-black/50 backdrop-blur-sm p-4">
-
-            {/* Close */}
-            <button
-              onClick={() => setSelectedIdx(null)}
-              className="absolute top-5 right-5 bg-white/80 dark:bg-gray-700/80
-                w-10 h-10 flex items-center justify-center rounded-full text-gray-700 
-                dark:text-gray-200 hover:bg-red-500 hover:text-white transition-all shadow-lg"
-            >
-              ✕
-            </button>
-
-            {/* Image */}
-            <div className="max-w-3xl w-full flex items-center justify-center">
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-0"
+            onClick={() => setSelectedIdx(null)}
+          >
+            {/* Overlay blur + gelap */}
+            <div className="absolute inset-0 backdrop-blur-md bg-black/65" />
+            <div className="relative z-10" onClick={e => e.stopPropagation()}>
+              <button
+                onClick={() => setSelectedIdx(null)}
+                className="absolute -top-4 -right-4 bg-red-500 text-white w-8 h-8 rounded-full shadow-md flex items-center justify-center hover:bg-red-600 transition-all"
+                aria-label="Close"
+              >
+                ✕
+              </button>
               <Image
                 src={lisensiData[selectedIdx].img}
                 alt="Preview"
-                width={1200}
-                height={800}
-                className="object-contain w-full max-h-[90vh] rounded-lg shadow-xl"
+                width={1000}
+                height={700}
+                className="object-contain w-full max-h-[85vh] rounded-2xl shadow-lg"
               />
             </div>
 
