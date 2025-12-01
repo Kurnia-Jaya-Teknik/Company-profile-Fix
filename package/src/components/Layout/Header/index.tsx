@@ -161,7 +161,7 @@ const Header: React.FC = () => {
           <div className="space-y-1">
             {headerData.map((item, index) => (
               <div key={index}>
-                <MobileHeaderLink item={item} />
+                <MobileHeaderLink item={item} onClick={() => setNavbarOpen(false)} />
                 {index < headerData.length - 1 && (
                   <div className="my-2 border-t border-gray-100 dark:border-gray-800"></div>
                 )}
