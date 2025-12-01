@@ -11,7 +11,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem; onClick?: (e?: MouseEvent) 
   const handleToggle = () => {
     setSubmenuOpen(!submenuOpen);
   };
-
+  //
   // Check if current path matches item href
   const isActive = pathname === item.href || pathname?.startsWith(item.href + "/");
   
