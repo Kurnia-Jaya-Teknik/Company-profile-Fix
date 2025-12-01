@@ -8,7 +8,8 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem; onClick?: (e?: MouseEvent) 
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const handleToggle = () => {
+  const handleToggle = (e: MouseEvent) => {
+    e.preventDefault();
     setSubmenuOpen(!submenuOpen);
   };
   //
@@ -24,7 +25,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem; onClick?: (e?: MouseEvent) 
     <div className="relative w-full">
       <Link
         href={item.href}
-        onClick={onClick}
+        onClick={item.submenu ? handleToggle : onClick}
         className={`flex items-center justify-between w-full py-3.5 px-4 rounded-xl transition-all duration-200 font-medium group ${
           isActive || hasActiveSubmenu
             ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-md"
