@@ -119,7 +119,13 @@ const ContactInfo = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">Telepon</h3>
-                      <p className="text-base text-muted dark:text-white dark:text-opacity-70">
+                      <a
+                        href="tel:+6285731000076"
+                        className="text-base text-primary hover:text-opacity-80 transition-all block"
+                      >
+                        +62 857-3100-0076
+                      </a>
+                      <p className="text-sm text-muted dark:text-white dark:text-opacity-70 mt-1">
                         Hubungi kami untuk informasi lebih lanjut
                       </p>
                     </div>

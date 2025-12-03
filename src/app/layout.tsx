@@ -92,7 +92,7 @@ export default function RootLayout({
     image: "https://kurniajayatek.com/Kontent/LOGO 2.png",
     "@id": "https://kurniajayatek.com",
     url: "https://kurniajayatek.com",
-    telephone: "+62 811-3690-3667",
+    telephone: "+62 857-3100-0076",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

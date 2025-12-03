@@ -89,7 +89,7 @@ const Footer = () => {
               <Link href="#" className="hover:text-red-400 hover:scale-110 transition-all duration-200">
                 <Icon icon="fa6-brands:linkedin" className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9" />
               </Link>
-              <Link href="#" className="hover:text-red-400 hover:scale-110 transition-all duration-200">
+              <Link href="https://www.instagram.com/kjteknik.id" target="_blank" rel="noopener noreferrer" className="hover:text-red-400 hover:scale-110 transition-all duration-200">
                 <Icon icon="fa6-brands:instagram" className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9" />
               </Link>
             </div>
