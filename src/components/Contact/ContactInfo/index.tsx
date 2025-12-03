@@ -180,7 +180,7 @@ const ContactInfo = () => {
 
                 {/* WHATSAPP BUTTON */}
                 <a
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/6285731000076?text=Halo%20CV.%20Kurnia%20Jaya%20Teknik,%20saya%20ingin%20menanyakan%20informasi%20tentang%20layanan%20Mechanical,%20Electrical%20%26%20Automation%20System.%20Terima%20kasih."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-primary text-white border-2 border-primary py-4 px-8 rounded-lg hover:bg-white hover:text-primary transition-all w-full font-bold text-17 shadow-md hover:shadow-lg cursor-pointer group"
