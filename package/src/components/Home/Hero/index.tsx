@@ -39,14 +39,19 @@ const Hero = () => {
               CV. Kurnia Jaya Teknik
               <br />
               <span className="bg-border dark:bg-transparent md:text-50 text-36 rounded-lg lg:text-start text-primary max-w-max">
-                Penyedia Peralatan Listrik Terpercaya
+                Solusi Rekayasa Mekanikal, Elektrikal, 
+              </span>
+              <span>
+                dan Otomasi yang Terpercaya
               </span>
               <br />
               di Jawa Timur.
             </h1>
-            <p className="sm:text-19 text-16 text-muted dark:text-white dark:text-opacity-70 text-start lg:max-w-full sm:max-w-75%">
-              Kami adalah penyedia peralatan listrik profesional di Jawa Timur dengan pengalaman bertahun-tahun. Melayani kebutuhan peralatan listrik untuk berbagai proyek dengan kualitas terbaik dan pelayanan yang memuaskan.
+            
+            <p className="sm:text-19 text-16 text-muted dark:text-white dark:text-opacity-70 text-start lg:max-w-full sm:max-w-75% text-justify">
+              CV. Kurnia Jaya Teknik adalah perusahaan berbadan hukum yang beroperasi di sektor kontraktor mekanikal, elektrikal, sistem otomasi, perdagangan, dan jasa pendukung lainnya. Dengan pengalaman dan kompetensi tim yang tersertifikasi, kami berkomitmen memberikan layanan berkualitas melalui perencanaan, pelaksanaan, dan pengendalian proyek yang efektif, serta selalu menempatkan standar K3 dan integritas sebagai prioritas utama.
             </p>
+
             <div className="flex items-center mt-12 mb-6">
               <Link
                 href="/contact"

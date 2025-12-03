@@ -65,7 +65,7 @@ const Solution = () => {
               </h1>
 
               <p className="mt-2 text-base text-muted dark:text-white dark:text-opacity-70 max-w-md text-justify">
-                CV. Kurnia Jaya Teknik adalah penyedia peralatan listrik terpercaya di Jawa Timur dengan pengalaman bertahun-tahun. Kami melayani kebutuhan peralatan listrik untuk berbagai proyek dengan kualitas terbaik dan pelayanan yang memuaskan.
+                CV. Kurnia Jaya Teknik adalah perusahaan berbadan hukum yang bergerak di bidang kontraktor mekanikal, elektrikal, dan sistem otomasi. Sejak berdiri pada tahun 2019, kami berkomitmen menyediakan layanan yang andal melalui tenaga ahli bersertifikasi, proses kerja yang terencana, serta penerapan standar K3 dalam setiap proyek. Dengan pengalaman yang terus berkembang, kami siap mendukung kebutuhan klien dengan kualitas kerja yang optimal dan hubungan kerja yang profesional.
               </p>
 
               <Link
