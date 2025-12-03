@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # old package folder (moved to root)
-/package/
+# /package/ (di-unignore agar bisa di-track git)
