@@ -61,7 +61,7 @@ const About = () => {
           </div>
 
           {/* GRID: image – text – image */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full items-stretch">
 
             {/* Left Image */}
             <motion.div
@@ -69,15 +69,15 @@ const About = () => {
               initial="hidden"
               animate={inView ? "show" : "hidden"}
               transition={{ duration: 0.8 }}
-              className="flex justify-center items-start"
+              className="flex justify-center items-stretch h-full"
             >
-              <div className="w-full rounded-2xl overflow-hidden aspect-square">
+              <div className="w-full overflow-hidden flex rounded-2xl">
                 <Image
                   src="/Kontent/Gambar 4.jpg"
                   alt="Gambar 1"
                   width={350}
-                  height={350}
-                  className="object-cover w-full h-full"
+                  height={500}
+                  className="object-cover w-full h-full rounded-2xl"
                 />
               </div>
             </motion.div>
@@ -88,7 +88,7 @@ const About = () => {
               initial="hidden"
               animate={inView ? "show" : "hidden"}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col justify-center items-center"
+              className="flex flex-col justify-center items-center h-full"
             >
               <div className="text-base text-muted dark:text-white/70 leading-relaxed text-justify space-y-6">
                 <p>
@@ -119,15 +119,15 @@ const About = () => {
               initial="hidden"
               animate={inView ? "show" : "hidden"}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex justify-center items-start"
+              className="flex justify-center items-stretch h-full"
             >
-              <div className="w-full rounded-2xl overflow-hidden aspect-square">
+              <div className="w-full overflow-hidden flex rounded-2xl">
                 <Image
                   src="/Kontent/Gambar 5.jpg"
                   alt="Gambar 2"
                   width={350}
-                  height={350}
-                  className="object-cover w-full h-full"
+                  height={500}
+                  className="object-cover w-full h-full rounded-2xl"
                 />
               </div>
             </motion.div>
