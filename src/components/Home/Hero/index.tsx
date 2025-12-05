@@ -88,7 +88,7 @@ const Hero = () => {
                   ))}
                 </div>
               </div>
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <p className="text-18 text-muted dark:text-white dark:text-opacity-70 text-center mb-4">
                   Trusted by
                 </p>
@@ -106,7 +106,7 @@ const Hero = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
           {/* Slider and Trusted by for desktop */}
@@ -134,7 +134,7 @@ const Hero = () => {
                 ))}
               </div>
             </div>
-            <div className="mt-26">
+            {/* <div className="mt-26">
               <p className="text-18 text-muted dark:text-white dark:text-opacity-70 text-center mb-4">
                 Owner Client
               </p>
@@ -152,7 +152,7 @@ const Hero = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

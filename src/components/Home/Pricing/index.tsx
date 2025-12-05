@@ -108,10 +108,25 @@ const Pricing = () => {
                         Email
                       </h3>
                       <a
-                        href="mailto:info@kurniajayateknik.com"
+                        href="mailto:kurniajayatek@gmail.com"
                         className="text-base text-primary hover:text-opacity-80 transition-all"
                       >
-                        info@kurniajayateknik.com
+                        kurniajayatek@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4  ml-16">
+                    
+                    <div className="flex-1">
+                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">
+                      
+                      </h3>
+                      <a
+                        href="mailto:sales@kurniajayatek.com"
+                        className="text-base text-primary hover:text-opacity-80 transition-all"
+                      >
+                        sales@kurniajayatek.com
                       </a>
                     </div>
                   </div>

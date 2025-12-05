@@ -17,10 +17,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
 
           {/* ========== 1. LOGO DI TENGAH & ABOUT ========== */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 sm:mb-6">
+         <div className="flex flex-col items-center text-center">
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-0 sm:mb-0 mx-auto">
               <Image
-                src="/Kontent/LOGO 3.jpg"
+                src="/Kontent/logo3.png"
                 alt="Company Logo"
                 fill
                 className="object-contain"
@@ -36,12 +36,12 @@ const Footer = () => {
           </div>
 
           {/* ========== 2. CONTACT INFO ========== */}
-          <div className="space-y-4 sm:space-y-5 text-center md:text-left">
-            <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-100 tracking-wide mb-4 sm:mb-6">
+          <div className="space-y-3 sm:space-y-4 text-center md:text-left">
+            <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-100 tracking-wide mb-3 sm:mb-4">
               Kontak Kami
             </h3>
 
-            <div className="flex items-start gap-3 sm:gap-4 justify-center md:justify-start px-4 sm:px-0">
+            <div className="flex items-start gap-2 sm:gap-3 justify-center md:justify-start px-0">
               <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-start justify-center mt-0.5">
                 <Icon icon="weui:location-outlined" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
@@ -54,7 +54,7 @@ const Footer = () => {
               </Link>
             </div>
 
-            <div className="flex items-center gap-3 sm:gap-4 justify-center md:justify-start">
+            <div className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
               <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
                 <Icon icon="majesticons:phone-retro-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
@@ -63,7 +63,7 @@ const Footer = () => {
               </Link>
             </div>
 
-            <div className="flex items-center gap-3 sm:gap-4 justify-center md:justify-start">
+            <div className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
               <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
                 <Icon icon="clarity:email-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
@@ -72,6 +72,17 @@ const Footer = () => {
                 className="hover:text-red-400 transition-colors text-xs sm:text-sm md:text-[15px] break-all"
               >
                 kurniajayatek@gmail.com
+              </Link>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
+              <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
+                <Icon icon="clarity:email-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
+              </div>
+              <Link
+                href="mailto:sales@kurniajayatek.com"
+                className="hover:text-red-400 transition-colors text-xs sm:text-sm md:text-[15px] break-all"
+              >
+                sales@kurniajayatek.com
               </Link>
             </div>
           </div>
