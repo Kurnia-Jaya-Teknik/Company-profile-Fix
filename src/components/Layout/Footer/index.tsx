@@ -41,7 +41,7 @@ const Footer = () => {
               Kontak Kami
             </h3>
 
-            <div className="flex items-start gap-2 sm:gap-3 justify-center md:justify-start px-0">
+            <div className="flex items-start gap-2 justify-center md:justify-start px-0">
               <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-start justify-center mt-0.5">
                 <Icon icon="weui:location-outlined" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
@@ -50,11 +50,11 @@ const Footer = () => {
                 target="_blank"
                 className="hover:text-red-400 transition-colors text-xs sm:text-sm md:text-[15px] leading-relaxed text-center md:text-left max-w-xs"
               >
-                Perum Karya Bakti Regency D-43, Gentong, Kec. Gadingrejo, Kota Pasuruan, Jawa Timur 67139
+                Dusun Kemuning, Gambir Kuning, Kraton, Pasuruan – Jawa Timur
               </Link>
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
+            <div className="flex items-center gap-2 justify-center md:justify-start">
               <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
                 <Icon icon="majesticons:phone-retro-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
@@ -63,7 +63,7 @@ const Footer = () => {
               </Link>
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
+            <div className="flex items-center gap-2 justify-center md:justify-start">
               <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
                 <Icon icon="clarity:email-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
@@ -74,7 +74,7 @@ const Footer = () => {
                 kurniajayatek@gmail.com
               </Link>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
+            <div className="flex items-center gap-2 justify-center md:justify-start">
               <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
                 <Icon icon="clarity:email-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
