@@ -96,10 +96,11 @@ const ContactInfo = () => {
                       <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">Alamat</h3>
                       <p className="text-base text-muted dark:text-white dark:text-opacity-70 leading-relaxed">
                         <strong className="text-midnight_text dark:text-white">CV. Kurnia Jaya Teknik</strong>
-                        <br /> Jawa Timur, Indonesia
+                        <br /> 
+                        Perum Karya Bakti Regency D-43, Gentong, Kec. Gadingrejo, Kota Pasuruan, Jawa Timur 67139
                         <br />
                         <span className="text-sm text-muted dark:text-white dark:text-opacity-60">
-                          Koordinat: -7.6978194, 112.8637701
+                          Koordinat: -7.6452851, 112.8927536
                         </span>
                       </p>
                     </div>
@@ -123,7 +124,7 @@ const ContactInfo = () => {
                         href="tel:+6285731000076"
                         className="text-base text-primary hover:text-opacity-80 transition-all block"
                       >
-                        +62 857-3100-0076
+                        0857-3100-0076
                       </a>
                       <p className="text-sm text-muted dark:text-white dark:text-opacity-70 mt-1">
                         Hubungi kami untuk informasi lebih lanjut
@@ -144,12 +145,29 @@ const ContactInfo = () => {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">Email</h3>
+                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">
+                        Email
+                      </h3>
                       <a
-                        href="mailto:info@kurniajayateknik.com"
+                        href="mailto:kurniajayatek@gmail.com"
                         className="text-base text-primary hover:text-opacity-80 transition-all"
                       >
-                        info@kurniajayateknik.com
+                        kurniajayatek@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4  ml-16">
+                    
+                    <div className="flex-1">
+                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">
+                      
+                      </h3>
+                      <a
+                        href="mailto:sales@kurniajayatek.com"
+                        className="text-base text-primary hover:text-opacity-80 transition-all"
+                      >
+                        sales@kurniajayatek.com
                       </a>
                     </div>
                   </div>
@@ -172,7 +190,7 @@ const ContactInfo = () => {
                       </h3>
                       <p className="text-base text-muted dark:text-white dark:text-opacity-70">
                         Senin - Jumat: 08:00 - 17:00 WIB <br />
-                        Sabtu: 08:00 - 12:00 WIB
+        
                       </p>
                     </div>
                   </div>
@@ -204,7 +222,7 @@ const ContactInfo = () => {
               >
                 <div className="relative w-full h-full min-h-[400px]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1234567890!2d112.8637701!3d-7.6978194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7cfce434d890b%3A0x426ed7dc814a46d0!2sCV.%20Kurnia%20Jaya%20Teknik!5e0!3m2!1sid!2sid!4v1735123456789!5m2!1sid!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3953.024288519757!2d112.89101181475893!3d-7.645285194402765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMzgnNDMuMCJTIDExMsKwNTMnMzMuOSJF!5e0!3m2!1sid!2sid!4v1733740000000!5m2!1sid!2sid"
                     width="100%"
                     height="100%"
                     style={{ border: 0, minHeight: "400px" }}

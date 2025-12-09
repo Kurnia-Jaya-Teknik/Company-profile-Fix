@@ -99,7 +99,7 @@ const ContactInfo = () => {
                         <br /> Jawa Timur, Indonesia
                         <br />
                         <span className="text-sm text-muted dark:text-white dark:text-opacity-60">
-                          Koordinat: -7.6978194, 112.8637701
+                          Koordinat: -7.6452851, 112.8927536
                         </span>
                       </p>
                     </div>
@@ -198,7 +198,7 @@ const ContactInfo = () => {
               >
                 <div className="relative w-full h-full min-h-[400px]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1234567890!2d112.8637701!3d-7.6978194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7cfce434d890b%3A0x426ed7dc814a46d0!2sCV.%20Kurnia%20Jaya%20Teknik!5e0!3m2!1sid!2sid!4v1735123456789!5m2!1sid!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3953.024288519757!2d112.89101181475893!3d-7.645285194402765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMzgnNDMuMCJTIDExMsKwNTMnMzMuOSJF!5e0!3m2!1sid!2sid!4v1733740000000!5m2!1sid!2sid"
                     width="100%"
                     height="100%"
                     style={{ border: 0, minHeight: "400px" }}

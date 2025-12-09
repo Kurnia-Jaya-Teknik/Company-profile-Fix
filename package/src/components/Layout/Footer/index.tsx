@@ -46,7 +46,7 @@ const Footer = () => {
                 <Icon icon="weui:location-outlined" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
               <Link
-                href="https://maps.app.goo.gl/rHXcn3mr2hpYdCLc7?g_st=ic"
+                href="https://maps.app.goo.gl/WVstCC4QzgG1szE17"
                 target="_blank"
                 className="hover:text-red-400 transition-colors text-xs sm:text-sm md:text-[15px] leading-relaxed text-center md:text-left max-w-xs"
               >
