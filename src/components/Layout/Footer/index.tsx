@@ -41,8 +41,8 @@ const Footer = () => {
               Kontak Kami
             </h3>
 
-            <div className="flex items-start gap-2 justify-center md:justify-start px-0">
-              <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-start justify-center mt-0.5">
+            <div className="flex items-start gap-2 sm:gap-3 justify-center md:justify-start px-0">
+              <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-start justify-center mt-0.5 -mr-1">
                 <Icon icon="weui:location-outlined" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
               <Link
@@ -50,21 +50,21 @@ const Footer = () => {
                 target="_blank"
                 className="hover:text-red-400 transition-colors text-xs sm:text-sm md:text-[15px] leading-relaxed text-center md:text-left max-w-xs"
               >
-                Dusun Kemuning, Gambir Kuning, Kraton, Pasuruan – Jawa Timur
+                Perum Karya Bakti Regency D-43, Gentong, Kec. Gadingrejo, Kota Pasuruan, Jawa Timur 67139
               </Link>
             </div>
 
-            <div className="flex items-center gap-2 justify-center md:justify-start">
-              <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
-                <Icon icon="majesticons:phone-retro-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
+            <div className="flex items-center gap-0 sm:gap-2 md:gap-3 justify-center md:justify-start">
+              <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center -mr-1">
+                <Icon icon="majesticons:phone-retro-line" className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-red-500" />
               </div>
               <Link href="tel:+6285731000076" className="hover:text-red-400 transition-colors text-xs sm:text-sm md:text-[15px]">
                 085731000076
               </Link>
             </div>
 
-            <div className="flex items-center gap-2 justify-center md:justify-start">
-              <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
+            <div className="flex items-center gap-0 sm:gap-2 md:gap-3 justify-center md:justify-start">
+              <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center -mr-1">
                 <Icon icon="clarity:email-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
               <Link
@@ -74,7 +74,7 @@ const Footer = () => {
                 kurniajayatek@gmail.com
               </Link>
             </div>
-            <div className="flex items-center gap-2 justify-center md:justify-start">
+            <div className="flex items-center gap-0.5 sm:gap-2 md:gap-3 justify-center md:justify-start">
               <div className="w-5 sm:w-6 md:w-7 flex-shrink-0 flex items-center justify-center">
                 <Icon icon="clarity:email-line" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-500" />
               </div>
