@@ -3,12 +3,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HeaderItem } from "../../../../types/menu";
 
-const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
+const MobileHeaderLink: React.FC<{ item: HeaderItem; onClose?: () => void }> = ({ item, onClose }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const handleToggle = () => {
-    setSubmenuOpen(!submenuOpen);
+  const handleToggle = (e: React.MouseEvent) => {
+    if (item.submenu) {
+      e.preventDefault();
+      setSubmenuOpen(!submenuOpen);
+    } else {
+      // If no submenu, close the navbar when link is clicked
+      onClose?.();
+    }
   };
 
   // Check if current path matches item href
@@ -23,7 +29,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     <div className="relative w-full">
       <Link
         href={item.href}
-        onClick={item.submenu ? handleToggle : undefined}
+        onClick={handleToggle}
         className={`flex items-center justify-between w-full py-3.5 px-4 rounded-xl transition-all duration-200 font-medium group ${
           isActive || hasActiveSubmenu
             ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-md"
@@ -60,6 +66,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
               <Link
                 key={index}
                 href={subItem.href}
+                onClick={onClose}
                 className={`flex items-center py-3 px-4 text-sm transition-all duration-200 border-b border-gray-200 dark:border-gray-700 last:border-b-0 group ${
                   isSubItemActive
                     ? "bg-primary text-white font-semibold"

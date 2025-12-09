@@ -20,7 +20,7 @@ const Footer = () => {
          <div className="flex flex-col items-center text-center">
             <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-0 sm:mb-0 mx-auto">
               <Image
-                src="/Kontent/logo3.png"
+                src="/Kontent/Logo3.png"
                 alt="Company Logo"
                 fill
                 className="object-contain"
