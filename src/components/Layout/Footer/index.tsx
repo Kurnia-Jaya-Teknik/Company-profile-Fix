@@ -50,7 +50,7 @@ const Footer = () => {
                 target="_blank"
                 className="hover:text-red-400 transition-colors text-xs sm:text-sm md:text-[15px] leading-relaxed text-center md:text-left max-w-xs"
               >
-                Dusun Kemuning, Gambir Kuning, Kraton, Pasuruan – Jawa Timur
+                Perum Karya Bakti Regency D-43, Gentong, Kec. Gadingrejo, Kota Pasuruan, Jawa Timur 67139
               </Link>
             </div>
 
