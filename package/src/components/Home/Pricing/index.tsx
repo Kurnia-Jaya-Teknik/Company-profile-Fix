@@ -62,7 +62,7 @@ const Pricing = () => {
                       <p className="text-base text-muted dark:text-white dark:text-opacity-70 leading-relaxed">
                         <strong className="text-midnight_text dark:text-white">CV. Kurnia Jaya Teknik</strong>
                         <br />
-                        Jawa Timur, Indonesia
+                        Perum Karya Bakti Regency D-43, Gentong, Kec. Gadingrejo, Kota Pasuruan, Jawa Timur 67139
                         <br />
                         <span className="text-sm text-muted dark:text-white dark:text-opacity-60">
                           Koordinat: -7.6452851, 112.8927536
@@ -83,10 +83,14 @@ const Pricing = () => {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">
-                        Telepon
-                      </h3>
-                      <p className="text-base text-muted dark:text-white dark:text-opacity-70">
+                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">Telepon</h3>
+                      <a
+                        href="tel:+6285731000076"
+                        className="text-base text-primary hover:text-opacity-80 transition-all block"
+                      >
+                        0857-3100-0076
+                      </a>
+                      <p className="text-sm text-muted dark:text-white dark:text-opacity-70 mt-1">
                         Hubungi kami untuk informasi lebih lanjut
                       </p>
                     </div>
@@ -108,10 +112,25 @@ const Pricing = () => {
                         Email
                       </h3>
                       <a
-                        href="mailto:info@kurniajayateknik.com"
+                        href="mailto:kurniajayatek@gmail.com"
                         className="text-base text-primary hover:text-opacity-80 transition-all"
                       >
-                        info@kurniajayateknik.com
+                        kurniajayatek@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4  ml-16">
+                    
+                    <div className="flex-1">
+                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">
+                      
+                      </h3>
+                      <a
+                        href="mailto:sales@kurniajayatek.com"
+                        className="text-base text-primary hover:text-opacity-80 transition-all"
+                      >
+                        sales@kurniajayatek.com
                       </a>
                     </div>
                   </div>
@@ -134,7 +153,6 @@ const Pricing = () => {
                       <p className="text-base text-muted dark:text-white dark:text-opacity-70">
                         Senin - Jumat: 08:00 - 17:00 WIB
                         <br />
-                        Sabtu: 08:00 - 12:00 WIB
                       </p>
                     </div>
                   </div>
