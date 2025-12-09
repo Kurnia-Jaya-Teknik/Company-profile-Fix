@@ -137,6 +137,7 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
+            // end modal popup
           )}
         </div>
       </div>
