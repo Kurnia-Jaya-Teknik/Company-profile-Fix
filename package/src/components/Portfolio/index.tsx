@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { portfolioSections } from "@/data/portfolioData";
 
@@ -17,11 +17,20 @@ const portfolioImages = [
   "/Kontent/Foto Portofolio/P12.jpg",
   "/Kontent/Foto Portofolio/P15.jpg",
   "/Kontent/Foto Portofolio/P16.jpg",
+  "/Kontent/Foto Portofolio/P17.jpg",
+  "/Kontent/Foto Portofolio/P18.jpg",
+  "/Kontent/Foto Portofolio/P19.jpg",
+  "/Kontent/Foto Portofolio/P20.jpg",
+  "/Kontent/Foto Portofolio/P21.jpg",
+  "/Kontent/Foto Portofolio/P22.jpg",
+  "/Kontent/Foto Portofolio/P23.jpg",
+  "/Kontent/Foto Portofolio/P24.jpg",
 ];
 
 const Portfolio = () => {
   const ref = useRef(null);
   const inView = useInView(ref);
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   const TopAnimation = {
     initial: { y: "-100%", opacity: 0 },
@@ -86,20 +95,49 @@ const Portfolio = () => {
               {portfolioImages.map((src) => (
                 <div
                   key={src}
-                  className="overflow-hidden rounded-2xl border border-border dark:border-dark_border shadow-sm"
+                  onClick={() => setSelectedImg(src)}
+                  className="overflow-hidden rounded-2xl border border-border dark:border-dark_border shadow-sm cursor-pointer hover:shadow-xl transition-shadow duration-300"
                 >
-                  <Image
-                    src={src}
-                    alt="Dokumentasi proyek CV. Kurnia Jaya Teknik"
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover"
-                    unoptimized
-                  />
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={src}
+                      alt="Dokumentasi proyek CV. Kurnia Jaya Teknik"
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                  </div>
                 </div>
               ))}
             </div>
           </div>
+
+          {/* Modal Popup */}
+          {selectedImg && (
+            <div
+              className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4"
+              onClick={() => setSelectedImg(null)}
+            >
+              <div className="relative max-w-7xl max-h-[90vh]">
+                <button
+                  onClick={() => setSelectedImg(null)}
+                  className="absolute -top-3 -right-3 bg-red-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors z-10 shadow-lg"
+                >
+                  ✕
+                </button>
+                <div className="relative">
+                  <Image
+                    src={selectedImg}
+                    alt="Dokumentasi proyek"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl max-h-[85vh] w-auto object-contain"
+                    unoptimized
+                  />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

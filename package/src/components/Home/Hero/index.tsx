@@ -42,13 +42,13 @@ const Hero = () => {
                 Solusi Rekayasa Mekanikal, Elektrikal, 
               </span>
               <span>
-                dan Otomasi yang Terpercaya
-              </span>
+                dan Otomasi yang Terpercaya.
+              </span> 
               <br />
-              di Jawa Timur.
+            
             </h1>
             
-            <p className="sm:text-19 text-16 text-muted dark:text-white dark:text-opacity-70 text-start lg:max-w-full sm:max-w-75% text-justify">
+            <p className="sm:text-19 text-16 text-muted dark:text-white dark:text-opacity-70 lg:max-w-full sm:max-w-75% text-justify">
               CV. Kurnia Jaya Teknik adalah perusahaan berbadan hukum yang beroperasi di sektor kontraktor mekanikal, elektrikal, sistem otomasi, perdagangan, dan jasa pendukung lainnya. Dengan pengalaman dan kompetensi tim yang tersertifikasi, kami berkomitmen memberikan layanan berkualitas melalui perencanaan, pelaksanaan, dan pengendalian proyek yang efektif, serta selalu menempatkan standar K3 dan integritas sebagai prioritas utama.
             </p>
 
@@ -88,7 +88,7 @@ const Hero = () => {
                   ))}
                 </div>
               </div>
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <p className="text-18 text-muted dark:text-white dark:text-opacity-70 text-center mb-4">
                   Trusted by
                 </p>
@@ -97,7 +97,7 @@ const Hero = () => {
                     <div key={index} className="flex items-center justify-center">
                       <Image
                         src={item.lightimage}
-                        alt={`Trusted partner ${index + 1}`}
+                        alt={Trusted partner ${index + 1}}
                         width={90}
                         height={45}
                         className="object-contain opacity-80 hover:opacity-100 transition-opacity"
@@ -106,7 +106,7 @@ const Hero = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
           {/* Slider and Trusted by for desktop */}
@@ -134,16 +134,16 @@ const Hero = () => {
                 ))}
               </div>
             </div>
-            <div className="mt-26">
+            {/* <div className="mt-26">
               <p className="text-18 text-muted dark:text-white dark:text-opacity-70 text-center mb-4">
-                Trusted by
+                Owner Client
               </p>
               <div className="flex justify-center items-center gap-6 flex-wrap">
                 {Heroimage.map((item, index) => (
                   <div key={index} className="flex items-center justify-center h-12">
                     <Image
                       src={item.lightimage}
-                      alt={`Trusted partner ${index + 1}`}
+                      alt={Trusted partner ${index + 1}}
                       width={100}
                       height={50}
                       className="object-contain opacity-70 hover:opacity-100 transition-opacity"
@@ -152,7 +152,7 @@ const Hero = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

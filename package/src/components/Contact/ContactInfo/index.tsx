@@ -81,7 +81,6 @@ const ContactInfo = () => {
 
               {/* Contact Info Cards */}
               <div className="space-y-4">
-                {/* CARD 1 */}
                 <motion.div
                   {...cardAnimation(0)}
                   className="bg-white dark:bg-midnight_text p-5 rounded-xl border border-border dark:border-dark_border shadow-sm hover:shadow-md transition-shadow"
@@ -93,20 +92,22 @@ const ContactInfo = () => {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">Alamat</h3>
+                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">
+                        Alamat
+                      </h3>
                       <p className="text-base text-muted dark:text-white dark:text-opacity-70 leading-relaxed">
                         <strong className="text-midnight_text dark:text-white">CV. Kurnia Jaya Teknik</strong>
-                        <br /> Jawa Timur, Indonesia
+                        <br />
+                        Perum Karya Bakti Regency D-43, Gentong, Kec. Gadingrejo, Kota Pasuruan, Jawa Timur 67139
                         <br />
                         <span className="text-sm text-muted dark:text-white dark:text-opacity-60">
-                          Koordinat: -7.6978194, 112.8637701
+                          Koordinat: -7.6452851, 112.8927536
                         </span>
                       </p>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* CARD 2 */}
                 <motion.div
                   {...cardAnimation(1)}
                   className="bg-white dark:bg-midnight_text p-5 rounded-xl border border-border dark:border-dark_border shadow-sm hover:shadow-md transition-shadow"
@@ -119,14 +120,19 @@ const ContactInfo = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">Telepon</h3>
-                      <p className="text-base text-muted dark:text-white dark:text-opacity-70">
+                      <a
+                        href="tel:+6285731000076"
+                        className="text-base text-primary hover:text-opacity-80 transition-all block"
+                      >
+                        0857-3100-0076
+                      </a>
+                      <p className="text-sm text-muted dark:text-white dark:text-opacity-70 mt-1">
                         Hubungi kami untuk informasi lebih lanjut
                       </p>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* CARD 3 */}
                 <motion.div
                   {...cardAnimation(2)}
                   className="bg-white dark:bg-midnight_text p-5 rounded-xl border border-border dark:border-dark_border shadow-sm hover:shadow-md transition-shadow"
@@ -138,18 +144,34 @@ const ContactInfo = () => {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">Email</h3>
+                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">
+                        Email
+                      </h3>
                       <a
-                        href="mailto:info@kurniajayateknik.com"
+                        href="mailto:kurniajayatek@gmail.com"
                         className="text-base text-primary hover:text-opacity-80 transition-all"
                       >
-                        info@kurniajayateknik.com
+                        kurniajayatek@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4  ml-16">
+                    
+                    <div className="flex-1">
+                      <h3 className="text-20 font-bold text-midnight_text dark:text-white mb-2">
+                      
+                      </h3>
+                      <a
+                        href="mailto:sales@kurniajayatek.com"
+                        className="text-base text-primary hover:text-opacity-80 transition-all"
+                      >
+                        sales@kurniajayatek.com
                       </a>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* CARD 4 */}
                 <motion.div
                   {...cardAnimation(3)}
                   className="bg-white dark:bg-midnight_text p-5 rounded-xl border border-border dark:border-dark_border shadow-sm hover:shadow-md transition-shadow"
@@ -165,40 +187,34 @@ const ContactInfo = () => {
                         Jam Operasional
                       </h3>
                       <p className="text-base text-muted dark:text-white dark:text-opacity-70">
-                        Senin - Jumat: 08:00 - 17:00 WIB <br />
-                        Sabtu: 08:00 - 12:00 WIB
+                        Senin - Jumat: 08:00 - 17:00 WIB
+                        <br />
                       </p>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* WHATSAPP BUTTON */}
-                <a
-                  href="https://wa.me/6281234567890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white border-2 border-primary py-4 px-8 rounded-lg hover:bg-white hover:text-primary transition-all w-full font-bold text-17 shadow-md hover:shadow-lg cursor-pointer group"
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white py-3 px-6 rounded-lg border-2 border-primary hover:bg-white hover:text-primary hover:shadow-lg transition-all duration-300 w-full font-semibold text-16"
                 >
                   <Icon
-                    icon="ic:baseline-whatsapp"
-                    width="24"
-                    height="24"
-                    className="text-white group-hover:text-primary transition-colors flex-shrink-0"
+                    icon="solar:phone-calling-bold"
+                    width="20"
+                    height="20"
                   />
-                  <span className="group-hover:text-primary whitespace-nowrap">
-                    Hubungi <span className="text-white group-hover:text-primary">Kami</span>
-                  </span>
-                </a>
+                  Hubungi Kami Sekarang
+                </Link>
               </div>
 
-              {/* GOOGLE MAPS */}
+              {/* Google Maps */}
               <motion.div
                 {...cardAnimation(4)}
                 className="w-full h-full min-h-[400px] rounded-xl overflow-hidden shadow-lg bg-white dark:bg-midnight_text border border-border dark:border-dark_border"
               >
                 <div className="relative w-full h-full min-h-[400px]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1234567890!2d112.8637701!3d-7.6978194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7cfce434d890b%3A0x426ed7dc814a46d0!2sCV.%20Kurnia%20Jaya%20Teknik!5e0!3m2!1sid!2sid!4v1735123456789!5m2!1sid!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3953.024288519757!2d112.89101181475893!3d-7.645285194402765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMzgnNDMuMCJTIDExMsKwNTMnMzMuOSJF!5e0!3m2!1sid!2sid!4v1733740000000!5m2!1sid!2sid"
                     width="100%"
                     height="100%"
                     style={{ border: 0, minHeight: "400px" }}
@@ -206,10 +222,10 @@ const ContactInfo = () => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="w-full h-full"
+                    title="CV. Kurnia Jaya Teknik Location"
                   ></iframe>
                 </div>
               </motion.div>
-
             </div>
           </motion.div>
         </div>
