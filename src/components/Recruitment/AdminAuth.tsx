@@ -9,10 +9,9 @@ const DEFAULT_PASSWORD = "admin123"; // Password default, bisa diubah
 interface AdminAuthProps {
   onAuthenticated: () => void;
   isAuthenticated: boolean;
-  onLogout?: () => Promise<void>;
 }
 
-const AdminAuth: React.FC<AdminAuthProps> = ({ onAuthenticated, isAuthenticated, onLogout }) => {
+const AdminAuth: React.FC<AdminAuthProps> = ({ onAuthenticated, isAuthenticated }) => {
   const [showLogin, setShowLogin] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -55,24 +54,10 @@ const AdminAuth: React.FC<AdminAuthProps> = ({ onAuthenticated, isAuthenticated,
     }
   };
 
-  const handleLogout = async () => {
-    try {
-      // Auto-save data before logout
-      if (onLogout) {
-        await onLogout();
-      }
-      
-      if (typeof window !== "undefined") {
-        sessionStorage.removeItem(ADMIN_SESSION_KEY);
-        window.location.reload();
-      }
-    } catch (error) {
-      console.error("Error during logout:", error);
-      // Still logout even if save fails
-      if (typeof window !== "undefined") {
-        sessionStorage.removeItem(ADMIN_SESSION_KEY);
-        window.location.reload();
-      }
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      sessionStorage.removeItem(ADMIN_SESSION_KEY);
+      window.location.reload();
     }
   };
 

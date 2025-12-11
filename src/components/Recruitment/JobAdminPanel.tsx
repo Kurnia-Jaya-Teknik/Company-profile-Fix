@@ -10,7 +10,6 @@ interface JobAdminPanelProps {
   onUpdate: (id: string, job: Partial<JobListing>) => void;
   onDelete: (id: string) => void;
   onReset: () => void;
-  onSaveAll: () => Promise<boolean>;
 }
 
 const JobAdminPanel: React.FC<JobAdminPanelProps> = ({
@@ -19,28 +18,10 @@ const JobAdminPanel: React.FC<JobAdminPanelProps> = ({
   onUpdate,
   onDelete,
   onReset,
-  onSaveAll,
 }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingJob, setEditingJob] = useState<JobListing | null>(null);
   const [showConfirmReset, setShowConfirmReset] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
-  const [saveMessage, setSaveMessage] = useState<string | null>(null);
-
-  const handleSaveAll = async () => {
-    setIsSaving(true);
-    setSaveMessage(null);
-    try {
-      await onSaveAll();
-      setSaveMessage("✓ Data berhasil disimpan!");
-      setTimeout(() => setSaveMessage(null), 3000);
-    } catch (error) {
-      setSaveMessage("✗ Gagal menyimpan data");
-      setTimeout(() => setSaveMessage(null), 3000);
-    } finally {
-      setIsSaving(false);
-    }
-  };
 
   const handleEdit = (job: JobListing) => {
     setEditingJob(job);
@@ -78,14 +59,6 @@ const JobAdminPanel: React.FC<JobAdminPanelProps> = ({
         </h3>
         <div className="flex gap-3">
           <button
-            onClick={handleSaveAll}
-            disabled={isSaving}
-            className="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white rounded-lg font-medium flex items-center gap-2"
-          >
-            <Icon icon={isSaving ? "lucide:loader-2" : "lucide:save"} className={`w-5 h-5 ${isSaving ? 'animate-spin' : ''}`} />
-            {isSaving ? "Menyimpan..." : "Simpan Semua"}
-          </button>
-          <button
             onClick={() => {
               setEditingJob(null);
               setIsFormOpen(true);
@@ -104,16 +77,6 @@ const JobAdminPanel: React.FC<JobAdminPanelProps> = ({
           </button>
         </div>
       </div>
-
-      {saveMessage && (
-        <div className={`mb-4 p-3 rounded-lg text-sm font-medium ${
-          saveMessage.includes('✓') 
-            ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800' 
-            : 'bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800'
-        }`}>
-          {saveMessage}
-        </div>
-      )}
 
       {showConfirmReset && (
         <div className="mb-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">

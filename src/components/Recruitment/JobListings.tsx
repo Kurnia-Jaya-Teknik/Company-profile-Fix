@@ -27,7 +27,7 @@ export interface JobListing {
 
 
 const JobListings = () => {
-  const { jobs, addJob, updateJob, deleteJob, resetToDefault, saveAll, isLoading } = useJobListingsAPI();
+  const { jobs, addJob, updateJob, deleteJob, resetToDefault, isLoading } = useJobListingsAPI();
   const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAdminMode, setIsAdminMode] = useState(false);
@@ -43,16 +43,6 @@ const JobListings = () => {
     setSelectedJob(null);
   };
 
-  const handleLogout = async () => {
-    try {
-      // Auto-save all data before logout
-      await saveAll();
-      console.log("Data auto-saved on logout");
-    } catch (error) {
-      console.error("Failed to save data on logout:", error);
-    }
-  };
-
   return (
     <>
       {/* Admin Auth */}
@@ -63,7 +53,6 @@ const JobListings = () => {
             setIsAdminMode(true);
           }}
           isAuthenticated={isAuthenticated}
-          onLogout={handleLogout}
         />
         {isAuthenticated && (
           <button
@@ -84,7 +73,6 @@ const JobListings = () => {
           onUpdate={updateJob}
           onDelete={deleteJob}
           onReset={resetToDefault}
-          onSaveAll={saveAll}
         />
       )}
 
