@@ -27,7 +27,7 @@ export interface JobListing {
 
 
 const JobListings = () => {
-  const { jobs, addJob, updateJob, deleteJob, resetToDefault, isLoading } = useJobListingsAPI();
+  const { jobs, addJob, updateJob, deleteJob, resetToDefault, saveAll, isLoading } = useJobListingsAPI();
   const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAdminMode, setIsAdminMode] = useState(false);
@@ -73,6 +73,7 @@ const JobListings = () => {
           onUpdate={updateJob}
           onDelete={deleteJob}
           onReset={resetToDefault}
+          onSaveAll={saveAll}
         />
       )}
 

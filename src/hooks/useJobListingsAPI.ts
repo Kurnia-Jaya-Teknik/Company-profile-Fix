@@ -131,17 +131,32 @@ export const useJobListingsAPI = () => {
   };
 
   const updateJob = async (id: string, updatedJob: Partial<JobListing>) => {
-    const updatedJobs = jobs.map((job) =>
-      job.id === id ? { ...job, ...updatedJob } : job
-    );
+    const jobIndex = jobs.findIndex((job) => job.id === id);
+    if (jobIndex === -1) return;
     
+    const updatedJobs = [
+      ...jobs.slice(0, jobIndex),
+      { ...jobs[jobIndex], ...updatedJob, id }, // Ensure ID is preserved
+      ...jobs.slice(jobIndex + 1),
+    ];
+    
+    const previousJobs = jobs;
     setJobs(updatedJobs);
     
     try {
       await saveJobsToAPI(updatedJobs);
     } catch (err) {
       // Revert on error
-      setJobs(jobs);
+      setJobs(previousJobs);
+      throw err;
+    }
+  };
+
+  const saveAllJobs = async () => {
+    try {
+      await saveJobsToAPI(jobs);
+      return true;
+    } catch (err) {
       throw err;
     }
   };
@@ -181,6 +196,7 @@ export const useJobListingsAPI = () => {
     deleteJob,
     resetToDefault,
     refresh: loadJobs,
+    saveAll: saveAllJobs,
   };
 };
 
