@@ -17,7 +17,7 @@ const AdminAuth: React.FC<AdminAuthProps> = ({ onAuthenticated, isAuthenticated 
   const [error, setError] = useState("");
   const [isChangingPassword, setIsChangingPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState(""); 
 
   useEffect(() => {
     // Check if already authenticated in this session (client-side only)
