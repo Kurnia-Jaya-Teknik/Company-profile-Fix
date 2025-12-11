@@ -1,12 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 // JSONBin.io configuration
 // Get free API key from https://jsonbin.io/
 // Add to .env.local: NEXT_PUBLIC_JSONBIN_API_KEY=your_api_key
 // Add to .env.local: NEXT_PUBLIC_JSONBIN_BIN_ID=your_bin_id (optional, will be created automatically)
 const JSONBIN_API_KEY = process.env.NEXT_PUBLIC_JSONBIN_API_KEY || "";
-const JSONBIN_BIN_ID = process.env.NEXT_PUBLIC_JSONBIN_BIN_ID || "";
+let JSONBIN_BIN_ID = process.env.NEXT_PUBLIC_JSONBIN_BIN_ID || "";
 const JSONBIN_URL = "https://api.jsonbin.io/v3/b";
+
+// File to store bin ID persistently
+const BIN_ID_FILE = path.join(process.cwd(), ".jsonbin-id");
+
+// Load bin ID from file if exists
+if (!JSONBIN_BIN_ID && fs.existsSync(BIN_ID_FILE)) {
+  try {
+    JSONBIN_BIN_ID = fs.readFileSync(BIN_ID_FILE, "utf-8").trim();
+  } catch (err) {
+    console.error("Failed to read bin ID file:", err);
+  }
+}
+
+// Save bin ID to file
+function saveBinId(binId: string) {
+  try {
+    fs.writeFileSync(BIN_ID_FILE, binId, "utf-8");
+    JSONBIN_BIN_ID = binId;
+  } catch (err) {
+    console.error("Failed to save bin ID:", err);
+  }
+}
 
 // GET - Read jobs from JSONBin.io
 export async function GET() {
@@ -117,6 +141,12 @@ export async function POST(request: NextRequest) {
 
     const result = await response.json();
     const createdBinId = result.metadata?.id || binId;
+    
+    // Save bin ID if it was just created
+    if (!binId && createdBinId) {
+      saveBinId(createdBinId);
+      console.log("New bin created and saved:", createdBinId);
+    }
     
     return NextResponse.json({ 
       success: true, 
