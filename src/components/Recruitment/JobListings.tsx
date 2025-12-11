@@ -5,7 +5,7 @@ import JobCard from "./JobCard";
 import JobDetailModal from "./JobDetailModal";
 import JobAdminPanel from "./JobAdminPanel";
 import AdminAuth from "./AdminAuth";
-import { useJobListings } from "@/hooks/useJobListings";
+import { useJobListingsAPI } from "@/hooks/useJobListingsAPI";
 
 export interface JobListing {
   id: string;
@@ -27,7 +27,7 @@ export interface JobListing {
 
 
 const JobListings = () => {
-  const { jobs, addJob, updateJob, deleteJob, resetToDefault } = useJobListings();
+  const { jobs, addJob, updateJob, deleteJob, resetToDefault, isLoading } = useJobListingsAPI();
   const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAdminMode, setIsAdminMode] = useState(false);
@@ -77,11 +77,23 @@ const JobListings = () => {
       )}
 
       {/* Job Listings */}
-      <div className="space-y-6 mb-12">
-        {jobs.map((job) => (
-          <JobCard key={job.id} job={job} onSeeDetails={() => handleOpenModal(job)} />
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+          Memuat data...
+        </div>
+      ) : (
+        <div className="space-y-6 mb-12">
+          {jobs.length > 0 ? (
+            jobs.map((job) => (
+              <JobCard key={job.id} job={job} onSeeDetails={() => handleOpenModal(job)} />
+            ))
+          ) : (
+            <p className="text-center text-gray-500 dark:text-gray-400 py-8">
+              Belum ada lowongan pekerjaan
+            </p>
+          )}
+        </div>
+      )}
       <JobDetailModal
         job={selectedJob}
         isOpen={isModalOpen}

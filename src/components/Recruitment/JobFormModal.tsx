@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { JobListing } from "./JobListings";
+import { calculateRelativeTime, parseRelativeTime, formatDateForInput } from "@/utils/dateUtils";
 
 interface JobFormModalProps {
   isOpen: boolean;
@@ -32,9 +33,18 @@ const JobFormModal: React.FC<JobFormModalProps> = ({
     tags: [""],
     type: "",
   });
+  const [postedDateRaw, setPostedDateRaw] = useState<string>("");
 
   useEffect(() => {
     if (initialData) {
+      // Try to parse existing relative time to date
+      const parsedDate = parseRelativeTime(initialData.postedDate);
+      const dateForInput = parsedDate 
+        ? formatDateForInput(parsedDate) 
+        : formatDateForInput(new Date(Date.now() - 60 * 24 * 60 * 60 * 1000)); // Default: 2 months ago
+      
+      setPostedDateRaw(dateForInput);
+      
       setFormData({
         title: initialData.title,
         postedDate: initialData.postedDate,
@@ -52,6 +62,11 @@ const JobFormModal: React.FC<JobFormModalProps> = ({
         type: initialData.type,
       });
     } else {
+      // Default: 2 months ago
+      const defaultDate = new Date();
+      defaultDate.setMonth(defaultDate.getMonth() - 2);
+      setPostedDateRaw(formatDateForInput(defaultDate));
+      
       setFormData({
         title: "",
         postedDate: "",
@@ -73,8 +88,19 @@ const JobFormModal: React.FC<JobFormModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Calculate relative time from selected date
+    let calculatedPostedDate = formData.postedDate;
+    if (postedDateRaw) {
+      const selectedDate = new Date(postedDateRaw);
+      if (!isNaN(selectedDate.getTime())) {
+        calculatedPostedDate = calculateRelativeTime(selectedDate);
+      }
+    }
+    
     onSubmit({
       ...formData,
+      postedDate: calculatedPostedDate,
       mainTasks: formData.mainTasks.filter((task) => task.trim() !== ""),
       qualifications: formData.qualifications.filter((qual) => qual.trim() !== ""),
       tags: formData.tags.filter((tag) => tag.trim() !== ""),
@@ -144,13 +170,28 @@ const JobFormModal: React.FC<JobFormModalProps> = ({
                 Tanggal Posting *
               </label>
               <input
-                type="text"
+                type="date"
                 required
-                placeholder="e.g., 2 month(s) ago"
-                value={formData.postedDate}
-                onChange={(e) => setFormData({ ...formData, postedDate: e.target.value })}
+                value={postedDateRaw}
+                onChange={(e) => {
+                  setPostedDateRaw(e.target.value);
+                  if (e.target.value) {
+                    const selectedDate = new Date(e.target.value);
+                    if (!isNaN(selectedDate.getTime())) {
+                      setFormData({
+                        ...formData,
+                        postedDate: calculateRelativeTime(selectedDate),
+                      });
+                    }
+                  }
+                }}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
               />
+              {formData.postedDate && (
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  {formData.postedDate}
+                </p>
+              )}
             </div>
             <div>
               <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">

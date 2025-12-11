@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { JobListing } from "@/components/Recruitment/JobListings";
 
 const STORAGE_KEY = "job_listings";
-const DEFAULT_JOBS: JobListing[] = [
+export const DEFAULT_JOBS: JobListing[] = [
   {
     id: "1",
     title: "Teknisi Elektrikal",
@@ -103,6 +103,7 @@ export const useJobListings = () => {
   const [jobs, setJobs] = useState<JobListing[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Load initial data
   useEffect(() => {
     // Only access localStorage on client-side
     if (typeof window !== "undefined") {
@@ -110,7 +111,8 @@ export const useJobListings = () => {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         try {
-          setJobs(JSON.parse(stored));
+          const parsedJobs = JSON.parse(stored);
+          setJobs(parsedJobs);
         } catch (error) {
           console.error("Error parsing stored jobs:", error);
           setJobs(DEFAULT_JOBS);
@@ -124,10 +126,38 @@ export const useJobListings = () => {
     setIsLoading(false);
   }, []);
 
+  // Listen for storage changes (for multi-tab sync)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === STORAGE_KEY && e.newValue) {
+        try {
+          const parsedJobs = JSON.parse(e.newValue);
+          setJobs(parsedJobs);
+        } catch (error) {
+          console.error("Error parsing stored jobs from storage event:", error);
+        }
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
+
   const saveJobs = (newJobs: JobListing[]) => {
+    // Update state first
     setJobs(newJobs);
+    
+    // Then save to localStorage
     if (typeof window !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newJobs));
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(newJobs));
+        // Trigger custom event for same-tab sync
+        window.dispatchEvent(new Event("storage"));
+      } catch (error) {
+        console.error("Error saving jobs to localStorage:", error);
+      }
     }
   };
 
@@ -136,25 +166,66 @@ export const useJobListings = () => {
       ...job,
       id: Date.now().toString(),
     };
-    const updatedJobs = [...jobs, newJob];
-    saveJobs(updatedJobs);
+    // Use functional update to ensure we have latest state
+    setJobs((prevJobs) => {
+      const updatedJobs = [...prevJobs, newJob];
+      if (typeof window !== "undefined") {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedJobs));
+          window.dispatchEvent(new Event("storage"));
+        } catch (error) {
+          console.error("Error saving jobs to localStorage:", error);
+        }
+      }
+      return updatedJobs;
+    });
     return newJob;
   };
 
   const updateJob = (id: string, updatedJob: Partial<JobListing>) => {
-    const updatedJobs = jobs.map((job) =>
-      job.id === id ? { ...job, ...updatedJob } : job
-    );
-    saveJobs(updatedJobs);
+    // Use functional update to ensure we have latest state
+    setJobs((prevJobs) => {
+      const updatedJobs = prevJobs.map((job) =>
+        job.id === id ? { ...job, ...updatedJob } : job
+      );
+      if (typeof window !== "undefined") {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedJobs));
+          window.dispatchEvent(new Event("storage"));
+        } catch (error) {
+          console.error("Error saving jobs to localStorage:", error);
+        }
+      }
+      return updatedJobs;
+    });
   };
 
   const deleteJob = (id: string) => {
-    const updatedJobs = jobs.filter((job) => job.id !== id);
-    saveJobs(updatedJobs);
+    // Use functional update to ensure we have latest state
+    setJobs((prevJobs) => {
+      const updatedJobs = prevJobs.filter((job) => job.id !== id);
+      if (typeof window !== "undefined") {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedJobs));
+          window.dispatchEvent(new Event("storage"));
+        } catch (error) {
+          console.error("Error saving jobs to localStorage:", error);
+        }
+      }
+      return updatedJobs;
+    });
   };
 
   const resetToDefault = () => {
-    saveJobs(DEFAULT_JOBS);
+    setJobs(DEFAULT_JOBS);
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_JOBS));
+        window.dispatchEvent(new Event("storage"));
+      } catch (error) {
+        console.error("Error saving jobs to localStorage:", error);
+      }
+    }
   };
 
   return {
