@@ -56,12 +56,12 @@ Hormat saya,
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-4"
+        className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4"
         onClick={onClose}
       >
         {/* Modal */}
         <div
-          className="bg-white dark:bg-gradient-to-br dark:from-[#1e2f42] dark:via-[#2a3f54] dark:to-[#1e2f42] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden relative border border-gray-200 dark:border-gray-600/30"
+          className="bg-white dark:bg-gradient-to-br dark:from-[#1e2f42] dark:via-[#2a3f54] dark:to-[#1e2f42] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[96vh] sm:max-h-[90vh] overflow-hidden relative border border-gray-200 dark:border-gray-600/30 flex flex-col"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Decorative Elements */}
@@ -69,8 +69,8 @@ Hormat saya,
           <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-red-500 via-pink-500 to-red-600 opacity-0 dark:opacity-100"></div>
 
           {/* Header */}
-          <div className="sticky top-0 bg-white/95 dark:bg-[#1e2f42]/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-600/30 px-5 sm:px-7 py-4 sm:py-5 flex items-center justify-between z-10">
-            <div className="relative z-10">
+          <div className="sticky top-0 bg-white/95 dark:bg-[#1e2f42]/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-600/30 px-5 sm:px-7 py-4 sm:py-5 flex items-center justify-between z-10 flex-shrink-0">
+            <div className="relative z-0">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-midnight_text dark:text-white uppercase pr-10 tracking-tight leading-tight">
                 {job.title}
               </h2>
@@ -92,7 +92,7 @@ Hormat saya,
             </div>
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 rounded-lg transition-all duration-200 hover:scale-110"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 rounded-lg transition-all duration-200 hover:scale-110 z-20"
               aria-label="Close modal"
             >
               <Icon icon="lucide:x" className="w-5 h-5 text-gray-600 dark:text-gray-300" />
@@ -100,7 +100,7 @@ Hormat saya,
           </div>
 
           {/* Content */}
-          <div className="px-5 sm:px-7 py-5 sm:py-6 space-y-5 sm:space-y-6 overflow-y-auto max-h-[calc(95vh-180px)] sm:max-h-[calc(90vh-180px)] relative z-10">
+          <div className="px-5 sm:px-7 py-5 sm:py-6 space-y-5 sm:space-y-6 overflow-y-auto flex-1 relative z-10">
             {/* Job Details Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-gray-200 dark:border-white/10">
@@ -181,20 +181,20 @@ Hormat saya,
           </div>
 
           {/* Footer Buttons */}
-          <div className="sticky bottom-0 bg-white/95 dark:bg-[#1e2f42]/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-600/30 px-5 sm:px-7 py-4 flex flex-col-reverse sm:flex-row justify-between items-stretch sm:items-center gap-3 z-10">
+          <div className="bg-white/95 dark:bg-[#1e2f42]/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-600/30 px-5 sm:px-7 py-3.5 sm:py-4 flex flex-col-reverse sm:flex-row justify-between items-stretch sm:items-center gap-2.5 sm:gap-3 z-10 flex-shrink-0">
             <button
               onClick={onClose}
-              className="px-6 py-3 bg-gray-200 dark:bg-white/10 hover:bg-gray-300 dark:hover:bg-white/20 text-gray-700 dark:text-gray-200 rounded-xl font-bold transition-all duration-200 text-base hover:scale-105"
+              className="px-6 py-2.5 sm:py-3 bg-gray-200 dark:bg-white/10 hover:bg-gray-300 dark:hover:bg-white/20 text-gray-700 dark:text-gray-200 rounded-xl font-bold transition-all duration-200 text-sm sm:text-base hover:scale-105"
             >
               Close
             </button>
             <a
               href={getEmailLink(job)}
               onClick={onClose}
-              className="group px-7 py-3 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white rounded-xl font-bold transition-all duration-300 text-base shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
+              className="group px-7 py-2.5 sm:py-3 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white rounded-xl font-bold transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
             >
               Lamar Pekerjaan Ini
-              <Icon icon="lucide:send" className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <Icon icon="lucide:send" className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
         </div>
