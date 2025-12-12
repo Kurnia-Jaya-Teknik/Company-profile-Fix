@@ -62,3 +62,4 @@ Jika ada error "JSONBin API key not configured":
 2. Restart dev server (`npm run dev`)
 3. Untuk production, pastikan sudah di-set di Vercel dan redeploy
 
+
