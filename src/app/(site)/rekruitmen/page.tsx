@@ -43,11 +43,11 @@ const page = () => {
               Cara Melamar
             </h3>
             <p className="text-body-color dark:text-gray-300 mb-4">
-              Kirimkan CV dan surat lamaran Anda ke:
+              Klik tombol "Lamar Sekarang" pada posisi yang Anda minati dan ikuti instruksi yang diberikan. Pastikan untuk melampirkan CV terbaru dan surat lamaran Anda.
             </p>
             <div className="space-y-2 text-body-color dark:text-gray-300">
               <p>
-                <strong>Email:</strong> info@kurniajayateknik.com
+                <strong>Email:</strong> hrdkurniajayatek@gmail.com
               </p>
               <p>
                 <strong>Atau hubungi kami</strong> melalui halaman{" "}
