@@ -23,13 +23,14 @@ const page = () => {
         description="Bergabunglah dengan tim CV. Kurnia Jaya Teknik"
         breadcrumbLinks={breadcrumbLinks}
       />
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-midnight_text dark:text-white mb-4">
+      <div className="dark:bg-darkmode bg-white">
+        <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+          <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-midnight_text dark:text-white mb-3 sm:mb-4">
               Lowongan Pekerjaan
             </h2>
-            <p className="text-lg text-body-color dark:text-gray-300">
+            <p className="text-base sm:text-lg text-body-color dark:text-gray-300 px-4 sm:px-0">
               Kami mencari individu yang berdedikasi dan berkomitmen untuk bergabung dengan tim kami
             </p>
           </div>
@@ -38,15 +39,15 @@ const page = () => {
           <JobListings />
 
           {/* How to Apply Section */}
-          <div className="bg-white dark:bg-darkmode rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-            <h3 className="text-2xl font-semibold text-midnight_text dark:text-white mb-6">
+          <div className="bg-white dark:bg-darkmode rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-gray-200 dark:border-gray-700">
+            <h3 className="text-xl sm:text-2xl font-semibold text-midnight_text dark:text-white mb-4 sm:mb-6">
               Cara Melamar
             </h3>
-            <p className="text-body-color dark:text-gray-300 mb-4">
+            <p className="text-sm sm:text-base text-body-color dark:text-gray-300 mb-4">
               Klik tombol "Lamar Sekarang" pada posisi yang Anda minati dan ikuti instruksi yang diberikan. Pastikan untuk melampirkan CV terbaru dan surat lamaran Anda.
             </p>
-            <div className="space-y-2 text-body-color dark:text-gray-300">
-              <p>
+            <div className="space-y-2 text-sm sm:text-base text-body-color dark:text-gray-300">
+              <p className="break-all">
                 <strong>Email:</strong> hrdkurniajayatek@gmail.com
               </p>
               <p>
@@ -58,6 +59,7 @@ const page = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

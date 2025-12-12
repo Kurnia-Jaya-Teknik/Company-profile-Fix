@@ -52,27 +52,27 @@ const JobAdminPanel: React.FC<JobAdminPanelProps> = ({
   };
 
   return (
-    <div className="bg-white dark:bg-darkmode rounded-lg shadow-lg p-6 mb-8 border border-gray-200 dark:border-gray-700">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-bold text-midnight_text dark:text-white">
+    <div className="bg-white dark:bg-darkmode rounded-lg shadow-lg p-4 sm:p-5 md:p-6 mb-6 sm:mb-8 border border-gray-200 dark:border-gray-700">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-midnight_text dark:text-white">
           Kelola Lowongan Pekerjaan
         </h3>
-        <div className="flex gap-3">
+        <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
           <button
             onClick={() => {
               setEditingJob(null);
               setIsFormOpen(true);
             }}
-            className="px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium flex items-center gap-2"
+            className="px-3 sm:px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium flex items-center justify-center gap-2 text-sm sm:text-base"
           >
-            <Icon icon="lucide:plus" className="w-5 h-5" />
-            Tambah Lowongan
+            <Icon icon="lucide:plus" className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="whitespace-nowrap">Tambah Lowongan</span>
           </button>
           <button
             onClick={() => setShowConfirmReset(!showConfirmReset)}
-            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg font-medium flex items-center gap-2"
+            className="px-3 sm:px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg font-medium flex items-center justify-center gap-2 text-sm sm:text-base"
           >
-            <Icon icon="lucide:refresh-cw" className="w-5 h-5" />
+            <Icon icon="lucide:refresh-cw" className="w-4 h-4 sm:w-5 sm:h-5" />
             Reset
           </button>
         </div>
@@ -100,33 +100,33 @@ const JobAdminPanel: React.FC<JobAdminPanelProps> = ({
         </div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {jobs.map((job) => (
           <div
             key={job.id}
-            className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+            className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
           >
-            <div className="flex-1">
-              <h4 className="font-semibold text-midnight_text dark:text-white mb-1">
+            <div className="flex-1 w-full sm:w-auto">
+              <h4 className="font-semibold text-sm sm:text-base text-midnight_text dark:text-white mb-1">
                 {job.title}
               </h4>
-              <p className="text-sm text-body-color dark:text-gray-400">
+              <p className="text-xs sm:text-sm text-body-color dark:text-gray-400">
                 {job.location} • {job.postedDate}
               </p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 w-full sm:w-auto">
               <button
                 onClick={() => handleEdit(job)}
-                className="px-3 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm flex items-center gap-1"
+                className="flex-1 sm:flex-none px-3 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-xs sm:text-sm flex items-center justify-center gap-1"
               >
-                <Icon icon="lucide:edit" className="w-4 h-4" />
+                <Icon icon="lucide:edit" className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 Edit
               </button>
               <button
                 onClick={() => handleDelete(job.id)}
-                className="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm flex items-center gap-1"
+                className="flex-1 sm:flex-none px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-xs sm:text-sm flex items-center justify-center gap-1"
               >
-                <Icon icon="lucide:trash" className="w-4 h-4" />
+                <Icon icon="lucide:trash" className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 Hapus
               </button>
             </div>

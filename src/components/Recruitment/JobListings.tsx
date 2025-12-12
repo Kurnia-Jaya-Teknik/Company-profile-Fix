@@ -46,7 +46,7 @@ const JobListings = () => {
   return (
     <>
       {/* Admin Auth */}
-      <div className="mb-6 flex justify-end items-center gap-3">
+      <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row justify-end items-stretch sm:items-center gap-2 sm:gap-3">
         <AdminAuth
           onAuthenticated={() => {
             setIsAuthenticated(true);
@@ -57,10 +57,11 @@ const JobListings = () => {
         {isAuthenticated && (
           <button
             onClick={() => setIsAdminMode(!isAdminMode)}
-            className="px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium flex items-center gap-2"
+            className="px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium flex items-center justify-center gap-2 text-sm sm:text-base"
           >
-            <Icon icon={isAdminMode ? "lucide:eye-off" : "lucide:settings"} className="w-5 h-5" />
-            {isAdminMode ? "Mode Tampilan" : "Mode Admin"}
+            <Icon icon={isAdminMode ? "lucide:eye-off" : "lucide:settings"} className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="hidden sm:inline">{isAdminMode ? "Mode Tampilan" : "Mode Admin"}</span>
+            <span className="sm:hidden">{isAdminMode ? "Tampilan" : "Admin"}</span>
           </button>
         )}
       </div>
@@ -78,17 +79,17 @@ const JobListings = () => {
 
       {/* Job Listings */}
       {isLoading ? (
-        <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+        <div className="text-center text-gray-500 dark:text-gray-400 py-6 sm:py-8 text-sm sm:text-base">
           Memuat data...
         </div>
       ) : (
-        <div className="space-y-6 mb-12">
+        <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10 md:mb-12">
           {jobs.length > 0 ? (
             jobs.map((job) => (
               <JobCard key={job.id} job={job} onSeeDetails={() => handleOpenModal(job)} />
             ))
           ) : (
-            <p className="text-center text-gray-500 dark:text-gray-400 py-8">
+            <p className="text-center text-gray-500 dark:text-gray-400 py-6 sm:py-8 text-sm sm:text-base">
               Belum ada lowongan pekerjaan
             </p>
           )}

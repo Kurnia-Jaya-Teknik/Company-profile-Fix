@@ -56,40 +56,100 @@ Hormat saya,
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-4"
         onClick={onClose}
       >
         {/* Modal */}
         <div
-          className="bg-white dark:bg-darkmode rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
+          className="bg-white dark:bg-gradient-to-br dark:from-[#1e2f42] dark:via-[#2a3f54] dark:to-[#1e2f42] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden relative border border-gray-200 dark:border-gray-600/30"
           onClick={(e) => e.stopPropagation()}
         >
+          {/* Decorative Elements */}
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-red-500/10 to-pink-500/10 dark:from-red-500/20 dark:to-pink-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-red-500 via-pink-500 to-red-600 opacity-0 dark:opacity-100"></div>
+
           {/* Header */}
-          <div className="sticky top-0 bg-white dark:bg-darkmode border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-between z-10">
-            <h2 className="text-2xl font-bold text-midnight_text dark:text-white pr-8">
-              {job.title}
-            </h2>
+          <div className="sticky top-0 bg-white/95 dark:bg-[#1e2f42]/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-600/30 px-5 sm:px-7 py-4 sm:py-5 flex items-center justify-between z-10">
+            <div className="relative z-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-midnight_text dark:text-white uppercase pr-10 tracking-tight leading-tight">
+                {job.title}
+              </h2>
+              {/* Location and Type badges */}
+              <div className="flex flex-wrap items-center gap-3 mt-3">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-white/10 rounded-lg">
+                  <Icon icon="lucide:calendar" className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">{job.postedDate}</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-white/10 rounded-lg">
+                  <Icon icon="lucide:map-pin" className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                  <span className="text-sm font-bold text-gray-700 dark:text-gray-200 uppercase">{job.location}</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-white/10 rounded-lg">
+                  <Icon icon="lucide:clock" className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">{job.type}</span>
+                </div>
+              </div>
+            </div>
             <button
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 rounded-lg transition-all duration-200 hover:scale-110"
               aria-label="Close modal"
             >
-              <Icon icon="lucide:x" className="w-6 h-6" />
+              <Icon icon="lucide:x" className="w-5 h-5 text-gray-600 dark:text-gray-300" />
             </button>
           </div>
 
           {/* Content */}
-          <div className="px-6 py-6 space-y-6">
+          <div className="px-5 sm:px-7 py-5 sm:py-6 space-y-5 sm:space-y-6 overflow-y-auto max-h-[calc(95vh-180px)] sm:max-h-[calc(90vh-180px)] relative z-10">
+            {/* Job Details Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-gray-200 dark:border-white/10">
+                <div className="flex items-center gap-2 mb-2">
+                  <Icon icon="lucide:user" className="w-5 h-5 text-red-500 dark:text-red-400" />
+                  <span className="text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-wide">Experience</span>
+                </div>
+                <p className="text-base font-bold text-midnight_text dark:text-white">{job.experienceLevel}</p>
+              </div>
+              <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-gray-200 dark:border-white/10">
+                <div className="flex items-center gap-2 mb-2">
+                  <Icon icon="lucide:graduation-cap" className="w-5 h-5 text-red-500 dark:text-red-400" />
+                  <span className="text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-wide">Education</span>
+                </div>
+                <p className="text-base font-bold text-midnight_text dark:text-white">{job.qualificationLevel}</p>
+              </div>
+              <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-gray-200 dark:border-white/10">
+                <div className="flex items-center gap-2 mb-2">
+                  <Icon icon="lucide:briefcase" className="w-5 h-5 text-red-500 dark:text-red-400" />
+                  <span className="text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-wide">Years</span>
+                </div>
+                <p className="text-base font-bold text-midnight_text dark:text-white">{job.yearsOfExperience}</p>
+              </div>
+              {job.fieldOfWork && (
+                <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-gray-200 dark:border-white/10">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Icon icon="lucide:wrench" className="w-5 h-5 text-red-500 dark:text-red-400" />
+                    <span className="text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-wide">Field</span>
+                  </div>
+                  <p className="text-base font-bold text-midnight_text dark:text-white">{job.fieldOfWork}</p>
+                </div>
+              )}
+            </div>
+
             {/* Main Task */}
-            <div>
-              <h3 className="font-bold text-lg text-midnight_text dark:text-white mb-3">
-                Main Task:
-              </h3>
-              <ul className="space-y-2">
+            <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-5 sm:p-6 border border-gray-200 dark:border-white/10">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-1.5 h-6 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
+                <h3 className="text-base sm:text-lg font-black text-midnight_text dark:text-white uppercase tracking-wide">
+                  Main Tasks
+                </h3>
+              </div>
+              <ul className="space-y-3">
                 {job.mainTasks.map((task, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-midnight_text dark:bg-white mt-2 flex-shrink-0"></span>
-                    <span className="text-body-color dark:text-gray-300 text-sm">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Icon icon="lucide:check" className="w-4 h-4 text-white font-bold" />
+                    </div>
+                    <span className="text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed font-medium">
                       {task}
                     </span>
                   </li>
@@ -98,95 +158,43 @@ Hormat saya,
             </div>
 
             {/* Qualification */}
-            <div>
-              <h3 className="font-bold text-lg text-midnight_text dark:text-white mb-3">
-                Qualification:
-              </h3>
-              <ul className="space-y-2">
+            <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-5 sm:p-6 border border-gray-200 dark:border-white/10">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-1.5 h-6 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
+                <h3 className="text-base sm:text-lg font-black text-midnight_text dark:text-white uppercase tracking-wide">
+                  Qualifications
+                </h3>
+              </div>
+              <ul className="space-y-3">
                 {job.qualifications.map((qual, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-midnight_text dark:bg-white mt-2 flex-shrink-0"></span>
-                    <span className="text-body-color dark:text-gray-300 text-sm">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Icon icon="lucide:check" className="w-4 h-4 text-white font-bold" />
+                    </div>
+                    <span className="text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed font-medium">
                       {qual}
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
-
-            {/* Job Summary */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-              <div className="space-y-3">
-                <div>
-                  <span className="font-semibold text-midnight_text dark:text-white">
-                    Experience Level:
-                  </span>
-                  <span className="ml-2 text-body-color dark:text-gray-300">
-                    {job.experienceLevel}
-                  </span>
-                </div>
-                <div>
-                  <span className="font-semibold text-midnight_text dark:text-white">
-                    Location:
-                  </span>
-                  <span className="ml-2 text-body-color dark:text-gray-300">
-                    {job.location}
-                  </span>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div>
-                  <span className="font-semibold text-midnight_text dark:text-white">
-                    Qualification:
-                  </span>
-                  <span className="ml-2 text-body-color dark:text-gray-300">
-                    {job.qualificationLevel}
-                  </span>
-                </div>
-                <div>
-                  <span className="font-semibold text-midnight_text dark:text-white">
-                    Years of Experience:
-                  </span>
-                  <span className="ml-2 text-body-color dark:text-gray-300">
-                    {job.yearsOfExperience}
-                  </span>
-                </div>
-                {job.fieldOfWork && (
-                  <div>
-                    <span className="font-semibold text-midnight_text dark:text-white">
-                      Field of Work:
-                    </span>
-                    <span className="ml-2 text-body-color dark:text-gray-300">
-                      {job.fieldOfWork}
-                    </span>
-                  </div>
-                )}
-                <div>
-                  <span className="font-semibold text-midnight_text dark:text-white">
-                    Job Type:
-                  </span>
-                  <span className="ml-2 text-body-color dark:text-gray-300">
-                    {job.type}
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Footer Buttons */}
-          <div className="sticky bottom-0 bg-white dark:bg-darkmode border-t border-gray-200 dark:border-gray-700 px-6 py-4 flex justify-end gap-3">
+          <div className="sticky bottom-0 bg-white/95 dark:bg-[#1e2f42]/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-600/30 px-5 sm:px-7 py-4 flex flex-col-reverse sm:flex-row justify-between items-stretch sm:items-center gap-3 z-10">
             <button
               onClick={onClose}
-              className="px-6 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium transition-colors"
+              className="px-6 py-3 bg-gray-200 dark:bg-white/10 hover:bg-gray-300 dark:hover:bg-white/20 text-gray-700 dark:text-gray-200 rounded-xl font-bold transition-all duration-200 text-base hover:scale-105"
             >
-              Tutup
+              Close
             </button>
             <a
               href={getEmailLink(job)}
               onClick={onClose}
-              className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors inline-block text-center"
+              className="group px-7 py-3 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white rounded-xl font-bold transition-all duration-300 text-base shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
             >
-              Lamar Pekerjaan ini
+              Lamar Pekerjaan Ini
+              <Icon icon="lucide:send" className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
         </div>
