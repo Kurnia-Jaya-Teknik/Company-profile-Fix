@@ -151,280 +151,301 @@ const JobFormModal: React.FC<JobFormModalProps> = ({
         </div>
 
         <form onSubmit={handleSubmit} className="px-6 py-6 space-y-6">
-          {/* Basic Info */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Judul Pekerjaan *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.title}
-                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Tanggal Posting *
-              </label>
-              <input
-                type="date"
-                required
-                value={postedDateRaw}
-                onChange={(e) => {
-                  setPostedDateRaw(e.target.value);
-                  if (e.target.value) {
-                    const selectedDate = new Date(e.target.value);
-                    if (!isNaN(selectedDate.getTime())) {
-                      setFormData({
-                        ...formData,
-                        postedDate: calculateRelativeTime(selectedDate),
-                      });
-                    }
-                  }
-                }}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
-              />
-              {formData.postedDate && (
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                  {formData.postedDate}
-                </p>
-              )}
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Lokasi *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.location}
-                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Perusahaan *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
-              />
-            </div>
-          </div>
-
-          {/* Main Task */}
+          {/* Title */}
           <div>
             <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-              Main Task (Ringkasan) *
+              Judul Posisi <span className="text-red-500">*</span>
             </label>
-            <textarea
+            <input
+              type="text"
+              placeholder="Contoh: Sales Manager"
               required
-              rows={2}
-              value={formData.mainTask}
-              onChange={(e) => setFormData({ ...formData, mainTask: e.target.value })}
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
+              value={formData.title}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+              className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
             />
           </div>
 
+          {/* Posted Date */}
           <div>
             <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-              Full Task (Deskripsi Lengkap) *
+              Tanggal Posting <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="date"
+              required
+              value={postedDateRaw}
+              onChange={(e) => {
+                setPostedDateRaw(e.target.value);
+                const date = new Date(e.target.value);
+                if (!isNaN(date.getTime())) {
+                  setFormData({ ...formData, postedDate: calculateRelativeTime(date) });
+                }
+              }}
+              className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
+            />
+            {formData.postedDate && (
+              <p className="text-sm text-muted dark:text-white dark:text-opacity-70 mt-1">
+                Akan ditampilkan sebagai: {formData.postedDate}
+              </p>
+            )}
+          </div>
+
+          {/* Location & Company */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
+                Lokasi <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Contoh: Jombang, Jawa Timur"
+                required
+                value={formData.location}
+                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
+                Perusahaan
+              </label>
+              <input
+                type="text"
+                placeholder="CV. Kurnia Jaya Teknik"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
+              />
+            </div>
+          </div>
+
+          {/* Main Task (Summary) */}
+          <div>
+            <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
+              Ringkasan Tugas <span className="text-red-500">*</span>
             </label>
             <textarea
+              placeholder="Ringkasan singkat tentang pekerjaan ini"
               required
-              rows={3}
+              value={formData.mainTask}
+              onChange={(e) => setFormData({ ...formData, mainTask: e.target.value })}
+              rows={2}
+              className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
+            />
+          </div>
+
+          {/* Full Task (Detailed) */}
+          <div>
+            <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
+              Deskripsi Lengkap
+            </label>
+            <textarea
+              placeholder="Deskripsi detail tentang pekerjaan ini"
               value={formData.fullTask}
               onChange={(e) => setFormData({ ...formData, fullTask: e.target.value })}
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
+              rows={4}
+              className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
             />
           </div>
 
           {/* Main Tasks Array */}
           <div>
-            <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-              Main Tasks (Daftar Tugas) *
-            </label>
-            {formData.mainTasks.map((task, index) => (
+            <div className="flex justify-between items-center mb-2">
+              <label className="text-sm font-semibold text-midnight_text dark:text-white">
+                Tugas Utama <span className="text-red-500">*</span>
+              </label>
+              <button
+                type="button"
+                onClick={() => addArrayItem('mainTasks')}
+                className="text-primary hover:text-opacity-80 text-sm font-semibold"
+              >
+                + Tambah Tugas
+              </button>
+            </div>
+            {formData.mainTasks?.map((task, index) => (
               <div key={index} className="flex gap-2 mb-2">
                 <input
                   type="text"
+                  placeholder={`Tugas ${index + 1}`}
                   value={task}
-                  onChange={(e) => updateArrayItem("mainTasks", index, e.target.value)}
-                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
-                  placeholder={`Task ${index + 1}`}
+                  onChange={(e) => updateArrayItem('mainTasks', index, e.target.value)}
+                  className="flex-1 p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
                 />
-                {formData.mainTasks.length > 1 && (
+                {formData.mainTasks && formData.mainTasks.length > 1 && (
                   <button
                     type="button"
-                    onClick={() => removeArrayItem("mainTasks", index)}
-                    className="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg"
+                    onClick={() => removeArrayItem('mainTasks', index)}
+                    className="p-3 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-lg hover:bg-red-200 dark:hover:bg-red-800"
                   >
-                    <Icon icon="lucide:trash" className="w-4 h-4" />
+                    <Icon icon="solar:trash-bin-trash-bold" width="18" height="18" />
                   </button>
                 )}
               </div>
             ))}
-            <button
-              type="button"
-              onClick={() => addArrayItem("mainTasks")}
-              className="mt-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg text-sm"
-            >
-              + Tambah Task
-            </button>
           </div>
 
           {/* Qualifications Array */}
           <div>
-            <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-              Qualifications (Kualifikasi) *
-            </label>
-            {formData.qualifications.map((qual, index) => (
+            <div className="flex justify-between items-center mb-2">
+              <label className="text-sm font-semibold text-midnight_text dark:text-white">
+                Kualifikasi <span className="text-red-500">*</span>
+              </label>
+              <button
+                type="button"
+                onClick={() => addArrayItem('qualifications')}
+                className="text-primary hover:text-opacity-80 text-sm font-semibold"
+              >
+                + Tambah Kualifikasi
+              </button>
+            </div>
+            {formData.qualifications?.map((qual, index) => (
               <div key={index} className="flex gap-2 mb-2">
                 <input
                   type="text"
-                  value={qual}
-                  onChange={(e) => updateArrayItem("qualifications", index, e.target.value)}
-                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
                   placeholder={`Kualifikasi ${index + 1}`}
+                  value={qual}
+                  onChange={(e) => updateArrayItem('qualifications', index, e.target.value)}
+                  className="flex-1 p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
                 />
-                {formData.qualifications.length > 1 && (
+                {formData.qualifications && formData.qualifications.length > 1 && (
                   <button
                     type="button"
-                    onClick={() => removeArrayItem("qualifications", index)}
-                    className="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg"
+                    onClick={() => removeArrayItem('qualifications', index)}
+                    className="p-3 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-lg hover:bg-red-200 dark:hover:bg-red-800"
                   >
-                    <Icon icon="lucide:trash" className="w-4 h-4" />
+                    <Icon icon="solar:trash-bin-trash-bold" width="18" height="18" />
                   </button>
                 )}
               </div>
             ))}
-            <button
-              type="button"
-              onClick={() => addArrayItem("qualifications")}
-              className="mt-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg text-sm"
-            >
-              + Tambah Kualifikasi
-            </button>
           </div>
 
-          {/* Job Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Experience & Qualification Levels */}
+          <div className="grid grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Experience Level *
+                Tingkat Pengalaman
               </label>
               <input
                 type="text"
-                required
+                placeholder="Contoh: Senior"
                 value={formData.experienceLevel}
                 onChange={(e) => setFormData({ ...formData, experienceLevel: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
+                className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
               />
             </div>
             <div>
               <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Qualification Level *
+                Tingkat Pendidikan
               </label>
               <input
                 type="text"
-                required
+                placeholder="Contoh: S1"
                 value={formData.qualificationLevel}
                 onChange={(e) => setFormData({ ...formData, qualificationLevel: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
+                className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
               />
             </div>
             <div>
               <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Years of Experience *
+                Tahun Pengalaman
               </label>
               <input
                 type="text"
-                required
+                placeholder="Contoh: 5+ tahun"
                 value={formData.yearsOfExperience}
                 onChange={(e) => setFormData({ ...formData, yearsOfExperience: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Field of Work
-              </label>
-              <input
-                type="text"
-                value={formData.fieldOfWork}
-                onChange={(e) => setFormData({ ...formData, fieldOfWork: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-                Job Type *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.type}
-                onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
+                className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
               />
             </div>
           </div>
 
-          {/* Tags */}
+          {/* Field of Work */}
           <div>
             <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
-              Tags *
+              Bidang Pekerjaan
             </label>
-            {formData.tags.map((tag, index) => (
+            <input
+              type="text"
+              placeholder="Contoh: Sales & Marketing"
+              value={formData.fieldOfWork}
+              onChange={(e) => setFormData({ ...formData, fieldOfWork: e.target.value })}
+              className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
+            />
+          </div>
+
+          {/* Tags Array */}
+          <div>
+            <div className="flex justify-between items-center mb-2">
+              <label className="text-sm font-semibold text-midnight_text dark:text-white">
+                Tags
+              </label>
+              <button
+                type="button"
+                onClick={() => addArrayItem('tags')}
+                className="text-primary hover:text-opacity-80 text-sm font-semibold"
+              >
+                + Tambah Tag
+              </button>
+            </div>
+            {formData.tags?.map((tag, index) => (
               <div key={index} className="flex gap-2 mb-2">
                 <input
                   type="text"
-                  value={tag}
-                  onChange={(e) => updateArrayItem("tags", index, e.target.value)}
-                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-transparent dark:text-white focus:border-primary focus:outline-none"
                   placeholder={`Tag ${index + 1}`}
+                  value={tag}
+                  onChange={(e) => updateArrayItem('tags', index, e.target.value)}
+                  className="flex-1 p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
                 />
-                {formData.tags.length > 1 && (
+                {formData.tags && formData.tags.length > 1 && (
                   <button
                     type="button"
-                    onClick={() => removeArrayItem("tags", index)}
-                    className="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg"
+                    onClick={() => removeArrayItem('tags', index)}
+                    className="p-3 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-lg hover:bg-red-200 dark:hover:bg-red-800"
                   >
-                    <Icon icon="lucide:trash" className="w-4 h-4" />
+                    <Icon icon="solar:trash-bin-trash-bold" width="18" height="18" />
                   </button>
                 )}
               </div>
             ))}
-            <button
-              type="button"
-              onClick={() => addArrayItem("tags")}
-              className="mt-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg text-sm"
+          </div>
+
+          {/* Type */}
+          <div>
+            <label className="block text-sm font-semibold text-midnight_text dark:text-white mb-2">
+              Tipe Pekerjaan <span className="text-red-500">*</span>
+            </label>
+            <select
+              required
+              value={formData.type}
+              onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+              className="w-full p-3 border border-border dark:border-dark_border rounded-lg bg-white dark:bg-gray-800 text-midnight_text dark:text-white focus:outline-none focus:border-primary"
             >
-              + Tambah Tag
-            </button>
+              <option value="">Pilih Tipe</option>
+              <option value="Full Time">Full Time</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Contract">Contract</option>
+              <option value="Internship">Internship</option>
+            </select>
           </div>
 
           {/* Buttons */}
-          <div className="flex justify-end gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
-            <button
-              type="button"
-              onClick={onClose}
-              className="px-6 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium"
-            >
-              Batal
-            </button>
+          <div className="flex gap-3 mt-8">
             <button
               type="submit"
-              className="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium"
+              className="flex-1 bg-primary text-white py-3 rounded-lg hover:bg-opacity-90 transition-all font-semibold"
             >
               {initialData ? "Update" : "Simpan"}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+              }}
+              className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all font-semibold"
+            >
+              Batal
             </button>
           </div>
         </form>
