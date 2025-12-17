@@ -11,9 +11,9 @@ import { Metadata } from "next";
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CV. Kurnia Jaya Teknik - Penyedia Peralatan Listrik di Jawa Timur",
+  title: "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
   description:
-    "CV. Kurnia Jaya Teknik adalah penyedia peralatan listrik terpercaya di Jawa Timur. Melayani Mechanical, Electrical & Automation System.",
+    "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
   icons: {
     icon: [
       { url: "/Kontent/LOGO 2.png", type: "image/png" },

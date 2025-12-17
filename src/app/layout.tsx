@@ -11,9 +11,9 @@ import { Metadata } from "next";
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CV. Kurnia Jaya Teknik Pasuruan - Penyedia Peralatan Listrik Terpercaya Jawa Timur",
+  title: "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
   description:
-    "CV. Kurnia Jaya Teknik Pasuruan adalah penyedia peralatan listrik terpercaya di Jawa Timur. Spesialis Mechanical, Electrical & Automation System. Melayani Pasuruan, Surabaya, Malang dan sekitarnya.",
+    "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
   keywords: [
     "kurnia jaya teknik",
     "kurnia jaya teknik pasuruan",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://kurniajayatek.com",
-    title: "CV. Kurnia Jaya Teknik Pasuruan - Peralatan Listrik Terpercaya",
+    title: "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
     description:
-      "Penyedia peralatan listrik profesional di Pasuruan dan Jawa Timur. Spesialis Mechanical, Electrical & Automation System.",
+      "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
     siteName: "CV. Kurnia Jaya Teknik",
     images: [
       {
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CV. Kurnia Jaya Teknik Pasuruan",
-    description: "Penyedia Peralatan Listrik Terpercaya di Jawa Timur",
+    title: "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
+    description: "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
     images: ["/Kontent/LOGO 2.png"],
   },
   robots: {
@@ -131,7 +131,7 @@ export default function RootLayout({
       "https://kurniajayatek.com",
     ],
     description:
-      "CV. Kurnia Jaya Teknik adalah penyedia peralatan listrik terpercaya di Pasuruan dan Jawa Timur. Spesialis Mechanical, Electrical & Automation System dengan pengalaman bertahun-tahun melayani industri dan komersial.",
+      "CV. Kurnia Jaya Teknik Pasuruan - Solusi Rekayasa Mekanikal, Elektrikal, dan Otomasi yang Terpercaya.",
     areaServed: [
       {
         "@type": "City",
