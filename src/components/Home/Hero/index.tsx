@@ -36,7 +36,7 @@ const Hero = () => {
         <div className="grid grid-cols-12 items-start">
           <motion.div {...leftAnimation} className="lg:col-span-6 col-span-12">
             <h1 className="md:text-50 sm:text-40 text-28 text-midnight_text dark:text-white lg:text-start mb-9 lg:w-full w-3/4">
-              CV. Kurnia Jaya Teknik
+              Kurnia Jaya Teknik
               <br />
               <span className="bg-border dark:bg-transparent md:text-50 text-36 rounded-lg lg:text-start text-primary max-w-max">
                 Solusi Rekayasa Mekanikal, Elektrikal, 
