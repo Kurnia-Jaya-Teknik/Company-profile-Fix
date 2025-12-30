@@ -48,7 +48,7 @@ const page = () => {
             </p>
             <div className="space-y-2 text-sm sm:text-base text-body-color dark:text-gray-300">
               <p className="break-all">
-                <strong>Email:</strong> hrdkurniajayatek@gmail.com
+                <strong>Email:</strong> hrd@kurniajayatek.com
               </p>
               <p>
                 <strong>Atau hubungi kami</strong> melalui halaman{" "}
