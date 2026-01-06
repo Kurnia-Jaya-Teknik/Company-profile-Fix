@@ -18,8 +18,8 @@ export const useJobListingsAPI = () => {
       const result = await response.json();
       
       if (result.success) {
-        // If no data, use default jobs
-        if (result.data && result.data.length > 0) {
+        // If result.data is an array (including empty), use it. Otherwise, fallback to DEFAULT_JOBS
+        if (Array.isArray(result.data)) {
           setJobs(result.data);
         } else {
           setJobs(DEFAULT_JOBS);
