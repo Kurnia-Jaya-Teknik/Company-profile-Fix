@@ -19,38 +19,39 @@ const lisensiData = [
   },
   {
     title: "Nomor Induk Berusaha",
-    img: "/Kontent/nib-1.jpg",
+    img: "/Kontent/Gambar 12.png",
     desc: "Identitas pelaku usaha yang diterbitkan pemerintah sebagai legalitas bisnis.",
     detail:
       "Nomor Induk Berusaha (NIB) adalah nomor identitas wajib setiap pelaku usaha...",
   },
   {
     title: "Nomor Induk Berusaha",
-    img: "/Kontent/nib-2.jpg",
+    img: "/Kontent/Gambar 11.png",
     desc: "Identitas pelaku usaha sebagai bukti registrasi resmi.",
     detail:
       "NIB ini merupakan bukti tambahan legalitas yang telah diverifikasi...",
   },
   {
     title: "Surat Izin Usaha Perdagangan",
-    img: "/Kontent/siup.jpg",
+    img: "/Kontent/Gambar 9.jpg",
     desc: "Izin resmi pemerintah untuk menjalankan usaha perdagangan.",
     detail: "SIUP adalah dokumen perizinan untuk aktivitas perdagangan secara legal...",
   },
   {
     title: "Izin Usaha Industri",
-    img: "/Kontent/izin-usaha-industri.jpg",
+    img: "/Kontent/Gambar 10.jpg",
     desc: "Dokumen izin untuk menjalankan usaha pada sektor industri.",
     detail:
       "Izin Usaha Industri menandakan bahwa perusahaan memenuhi standar pemerintah...",
   },
   {
     title: "NPWP",
-    img: "/Kontent/npwp.jpg",
+    img: "/Kontent/Gambar 3.jpg",
     desc: "Nomor Pokok Wajib Pajak sebagai identitas perpajakan perusahaan.",
     detail:
       "NPWP digunakan sebagai identitas wajib pajak dan keperluan administrasi...",
   },
+  
   
   
 ];
