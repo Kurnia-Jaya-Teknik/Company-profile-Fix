@@ -13,7 +13,7 @@ const TopAnimation = {
 const lisensiData = [
   {
     title: "Surat Pemberitahuan Proses Sertifikasi ISO",
-    img: "/Kontent/Gambar 12.png",
+    img: "/images/notification-letter-iso.jpg",
     desc: "Surat ini menyatakan bahwa CV. Kurnia Jaya Teknik sedang dalam proses sertifikasi ISO 9001:2015 dan ISO 45001:2018 oleh AMTIVO Group.",
     detail: "Surat Keterangan Terdaftar adalah bukti legalitas awal perusahaan...",
   },
