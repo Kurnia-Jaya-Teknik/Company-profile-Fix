@@ -48,12 +48,12 @@ const Spend: FC = () => {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                onClick={() => setSelectedImg("/Kontent/Gambar 12.png")}
+                onClick={() => setSelectedImg("/images/ISO.png")}
                 className="cursor-pointer flex-shrink-0"
               >
                 <div className="relative">
                   <Image
-                    src="/Kontent/Gambar 12.png"
+                    src="/images/ISO.jpg"
                     alt="Sertifikat ISO CV Kurnia Jaya Teknik"
                     width={400}
                     height={550}
