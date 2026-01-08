@@ -13,40 +13,40 @@ const TopAnimation = {
 const lisensiData = [
   {
     title: "Surat Pemberitahuan Proses Sertifikasi ISO",
-    img: "/images/notification-letter-iso.jpg",
+    img: "/images/ISO.jpg",
     desc: "Surat ini menyatakan bahwa CV. Kurnia Jaya Teknik sedang dalam proses sertifikasi ISO 9001:2015 dan ISO 45001:2018 oleh AMTIVO Group.",
     detail: "Surat Keterangan Terdaftar adalah bukti legalitas awal perusahaan...",
   },
   {
     title: "Nomor Induk Berusaha",
-    img: "/Kontent/Gambar 12.png",
+    img: "",
     desc: "Identitas pelaku usaha yang diterbitkan pemerintah sebagai legalitas bisnis.",
     detail:
       "Nomor Induk Berusaha (NIB) adalah nomor identitas wajib setiap pelaku usaha...",
   },
   {
     title: "Nomor Induk Berusaha",
-    img: "/Kontent/Gambar 11.png",
+    img: "",
     desc: "Identitas pelaku usaha sebagai bukti registrasi resmi.",
     detail:
       "NIB ini merupakan bukti tambahan legalitas yang telah diverifikasi...",
   },
   {
     title: "Surat Izin Usaha Perdagangan",
-    img: "/Kontent/Gambar 9.jpg",
+    img: "",
     desc: "Izin resmi pemerintah untuk menjalankan usaha perdagangan.",
     detail: "SIUP adalah dokumen perizinan untuk aktivitas perdagangan secara legal...",
   },
   {
     title: "Izin Usaha Industri",
-    img: "/Kontent/Gambar 10.jpg",
+    img: "",
     desc: "Dokumen izin untuk menjalankan usaha pada sektor industri.",
     detail:
       "Izin Usaha Industri menandakan bahwa perusahaan memenuhi standar pemerintah...",
   },
   {
     title: "NPWP",
-    img: "/Kontent/Gambar 3.jpg",
+    img: "",
     desc: "Nomor Pokok Wajib Pajak sebagai identitas perpajakan perusahaan.",
     detail:
       "NPWP digunakan sebagai identitas wajib pajak dan keperluan administrasi...",
