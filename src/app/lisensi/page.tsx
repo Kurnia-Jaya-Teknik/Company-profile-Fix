@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Breadcrumb from "@/components/Breadcrumb";
+import { CertificateImage } from "@/components/CertificateImage/CertificateImage";
 
 // Variants animasi muncul saat scroll
 const TopAnimation = {
@@ -218,7 +219,7 @@ const Lisensi = () => {
                   hover:border-primary/40"
               >
                 <div className="w-full h-[220px] flex items-center justify-center overflow-hidden rounded-xl mb-4 bg-gray-50 dark:bg-gray-800">
-                  <Image
+                  <CertificateImage
                     src={item.img}
                     alt={item.title}
                     width={300}
@@ -252,21 +253,33 @@ const Lisensi = () => {
           >
             {/* Overlay blur + gelap */}
             <div className="absolute inset-0 backdrop-blur-md bg-black/65" />
-            <div className="relative z-10" onClick={e => e.stopPropagation()}>
+            <div className="relative z-10 w-full max-w-4xl" onClick={e => e.stopPropagation()}>
               <button
                 onClick={() => setSelectedIdx(null)}
-                className="absolute -top-4 -right-4 bg-red-500 text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center hover:bg-red-600 transition-all font-bold text-xl"
+                className="absolute bottom-167 right-49 bg-red-500 text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center hover:bg-red-600 transition-all font-bold text-xl z-20"
                 aria-label="Close"
               >
                 ✕
               </button>
-              <Image
-                src={lisensiData[selectedIdx].img}
-                alt={lisensiData[selectedIdx].title}
-                width={1000}
-                height={700}
-                className="object-contain w-full max-h-[85vh] rounded-2xl shadow-lg"
-              />
+              <div className="relative w-full">
+                <Image
+                  src={lisensiData[selectedIdx].img}
+                  alt={lisensiData[selectedIdx].title}
+                  width={1000}
+                  height={700}
+                  className="object-contain w-full max-h-[85vh] rounded-2xl shadow-lg"
+                />
+                {/* Watermark Logo untuk Modal - Miring */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none rounded-2xl">
+                  <Image
+                    src="/Kontent/LOGO 2.png"
+                    alt="watermark"
+                    width={300}
+                    height={300}
+                    className="opacity-40 object-contain max-w-[80%] -rotate-45"
+                  />
+                </div>
+              </div>
               <p className="text-white text-center mt-4 font-semibold">
                 {lisensiData[selectedIdx].title}
               </p>
