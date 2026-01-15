@@ -197,13 +197,6 @@ const lisensiData: SertifikatItem[] = [
     desc: "Sertifikat Welder dari peserta pelatihan.",
     detail: "Sertifikat Welder dengan standar kualitas pengelasan internasional.",
   },
-  {
-    title: "Welder - Teguh Arifiyanto",
-    category: "welder",
-    img: "/Kontent/Sertifikat/Welder-Teguh Arifiyanto_page-0001.jpg",
-    desc: "Sertifikat Welder dari peserta pelatihan.",
-    detail: "Sertifikat Welder dengan standar kualitas pengelasan internasional.",
-  },
 ];
 
 const Lisensi = () => {
@@ -347,36 +340,30 @@ const Lisensi = () => {
         {selectedIdx !== null && lisensiData[selectedIdx]?.img && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedIdx(null)}
           >
             {/* Overlay blur + gelap */}
-            <div className="absolute inset-0 backdrop-blur-md bg-black/65" />
-            <div className="relative z-10 w-full max-w-4xl" onClick={e => e.stopPropagation()}>
-              <button
+            <div 
+              className="absolute inset-0 backdrop-blur-md bg-black/65 cursor-pointer" 
+              onClick={() => setSelectedIdx(null)}
+            />
+            <div className="relative z-10 w-full max-w-4xl">
+              <Image
+                src={lisensiData[selectedIdx].img}
+                alt={lisensiData[selectedIdx].title}
+                width={1000}
+                height={700}
+                className="object-contain w-full max-h-[85vh] cursor-pointer"
                 onClick={() => setSelectedIdx(null)}
-                className="absolute bottom-167 right-49 bg-red-500 text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center hover:bg-red-600 transition-all font-bold text-xl z-20"
-                aria-label="Close"
-              >
-                ✕
-              </button>
-              <div className="relative w-full">
+              />
+              {/* Watermark Logo untuk Modal - Miring */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <Image
-                  src={lisensiData[selectedIdx].img}
-                  alt={lisensiData[selectedIdx].title}
-                  width={1000}
-                  height={700}
-                  className="object-contain w-full max-h-[85vh] rounded-2xl shadow-lg"
+                  src="/Kontent/LOGO 2.png"
+                  alt="watermark"
+                  width={300}
+                  height={300}
+                  className="opacity-40 object-contain max-w-[80%] -rotate-45"
                 />
-                {/* Watermark Logo untuk Modal - Miring */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none rounded-2xl">
-                  <Image
-                    src="/Kontent/LOGO 2.png"
-                    alt="watermark"
-                    width={300}
-                    height={300}
-                    className="opacity-40 object-contain max-w-[80%] -rotate-45"
-                  />
-                </div>
               </div>
               <p className="text-white text-center mt-4 font-semibold">
                 {lisensiData[selectedIdx].title}
