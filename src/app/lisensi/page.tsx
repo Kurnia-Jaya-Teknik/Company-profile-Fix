@@ -200,13 +200,6 @@ const lisensiData: SertifikatItem[] = [
     detail: "Sertifikat Welder dengan standar kualitas pengelasan internasional.",
   },
   {
-    title: "Welder - Teguh Arifiyanto",
-    category: "welder",
-    img: "/Kontent/Sertifikat/Welder-Teguh Arifiyanto_page-0001.jpg",
-    desc: "Sertifikat Welder dari peserta pelatihan.",
-    detail: "Sertifikat Welder dengan standar kualitas pengelasan internasional.",
-  },
-  {
     title: "K3 - Endik Supriadi",
     category: "teknisi-k3-listrik",
     img: "/Kontent/Sertifikat/Endik Supriadi- K3.jpeg",
