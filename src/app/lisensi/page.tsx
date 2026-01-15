@@ -12,7 +12,7 @@ const TopAnimation = {
 };
 
 // Kategori Sertifikat
-export type CertificateCategory = "scissor" | "supervisor-scaffolder" | "teknisi-k3-listrik" | "teknisi-k3-peranca" | "tkbt-2" | "welder" | "all";
+export type CertificateCategory = "scissor" | "supervisor-scaffolder" | "teknisi-k3-listrik" | "teknisi-k3-peranca" | "tkbt-2" | "welder" | "pengelasan" | "all";
 
 const categoryLabels: Record<CertificateCategory, string> = {
   all: "Semua Sertifikat",
@@ -22,6 +22,7 @@ const categoryLabels: Record<CertificateCategory, string> = {
   "teknisi-k3-peranca": "Teknisi K3 Peranca",
   "tkbt-2": "TKBT 2",
   welder: "Welder",
+  pengelasan: "Pengelasan",
 };
 
 const categoryDescriptions: Record<CertificateCategory, string> = {
@@ -32,6 +33,7 @@ const categoryDescriptions: Record<CertificateCategory, string> = {
   "teknisi-k3-peranca": "Sertifikat Teknisi K3 untuk perancang dengan fokus pada desain dan perencanaan sistem keselamatan kerja.",
   "tkbt-2": "Sertifikat Tenaga Kerja Bersertifikat Tingkat 2 yang menunjukkan kompetensi profesional sesuai standar nasional.",
   welder: "Sertifikat Welder untuk tukang las dengan kualifikasi internasional dan standar kualitas pengelasan tinggi.",
+  pengelasan: "Sertifikat Pengelasan untuk profesional yang ahli dalam teknik pengelasan dan penyambungan logam dengan standar kualitas internasional.",
 };
 
 interface SertifikatItem {
@@ -196,6 +198,111 @@ const lisensiData: SertifikatItem[] = [
     img: "/Kontent/Sertifikat/Welder-Idhoul Munif_page-0001.jpg",
     desc: "Sertifikat Welder dari peserta pelatihan.",
     detail: "Sertifikat Welder dengan standar kualitas pengelasan internasional.",
+  },
+  {
+    title: "Welder - Teguh Arifiyanto",
+    category: "welder",
+    img: "/Kontent/Sertifikat/Welder-Teguh Arifiyanto_page-0001.jpg",
+    desc: "Sertifikat Welder dari peserta pelatihan.",
+    detail: "Sertifikat Welder dengan standar kualitas pengelasan internasional.",
+  },
+  {
+    title: "K3 - Endik Supriadi",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/Endik Supriadi- K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Fatkhur Rohman",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/Fatkhur Rohman- K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Hakim Nur Fuadi",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/Hakim Nur Fuadi - K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "Juru Las - Harisun Reza",
+    category: "pengelasan",
+    img: "/Kontent/Sertifikat/Harisun Reza- juru las.jpeg",
+    desc: "Sertifikat Juru Las dari peserta pelatihan.",
+    detail: "Sertifikat pengelasan profesional dengan standar internasional.",
+  },
+  {
+    title: "K3 - M. Eko Safiudin",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/M. Eko Safiudin- K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - M. Firmansyah",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/M. Firmansyah- K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Mohammad Nur Fatahillah Jalal",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/MOHAMMAD NUR FATAHILLAH JALAL- K3.jpg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Muhk Hikam",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/Muhk Hikam- K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Nur Salim",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/NUR SALIM- K3.jpg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Ris Faruq",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/Ris Faruq- K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Suhaemi",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/Suhaemi - K3.jpg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Yarkasi",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/Yarkasi - K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "K3 - Yusronul Ulum",
+    category: "teknisi-k3-listrik",
+    img: "/Kontent/Sertifikat/Yusronul Ulum - K3.jpeg",
+    desc: "Sertifikat K3 dari peserta pelatihan.",
+    detail: "Sertifikat Kesehatan dan Keselamatan Kerja profesional.",
+  },
+  {
+    title: "Pengelasan - Zahid",
+    category: "pengelasan",
+    img: "/Kontent/Sertifikat/Zahid- Pengelasan.jpeg",
+    desc: "Sertifikat Pengelasan dari peserta pelatihan.",
+    detail: "Sertifikat pengelasan profesional dengan standar internasional.",
   },
 ];
 
