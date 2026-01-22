@@ -2,13 +2,19 @@
 import React, { FC, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useInView } from "motion/react";
-import { ShieldCheck, FileCheck, Landmark } from "lucide-react";
+import { ShieldCheck, FileCheck, Landmark, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Spend: FC = () => {
   const ref = useRef(null);
   const inView = useInView(ref);
 
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
+  const [currentISOIndex, setCurrentISOIndex] = useState(0);
+
+  const isoImages = [
+    { src: "/Kontent/ISO 90012015.jpg", alt: "Sertifikat ISO 9001:2015" },
+    { src: "/Kontent/ISO 450012018.jpg", alt: "Sertifikat ISO 45001:2018" },
+  ];
 
   // Tutup modal via ESC
   useEffect(() => {
@@ -31,6 +37,14 @@ const Spend: FC = () => {
     transition: { duration: 0.8, delay: 0.2 },
   };
 
+  const nextISO = () => {
+    setCurrentISOIndex((prev) => (prev + 1) % isoImages.length);
+  };
+
+  const prevISO = () => {
+    setCurrentISOIndex((prev) => (prev - 1 + isoImages.length) % isoImages.length);
+  };
+
   return (
     <section className="dark:bg-darkmode overflow-hidden py-20">
       <div className="container mx-auto px-4 max-w-6xl">
@@ -51,73 +65,164 @@ const Spend: FC = () => {
                 onClick={() => setSelectedImg("/images/notification-letter-iso.jpg")}
                 className="cursor-pointer flex-shrink-0"
               >
-                <div className="relative">
-                  <Image
-                    src="/images/notification-letter-iso.jpg"
-                    alt="Sertifikat ISO CV Kurnia Jaya Teknik"
-                    width={400}
-                    height={550}
-                    className="object-contain rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 max-w-[300px] md:max-w-[400px]"
-                  />
-                  <div className="absolute -top-3 -right-3 bg-blue-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
-                    ISO Certified
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* ISO 9001 & 45001 Certificate Section */}
+          <motion.div 
+            {...TopAnimation} 
+            className="mb-20"
+          >
+            {/* Title & Subtitle Section */}
+            <motion.div className="mb-12">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-red-500 p-4 rounded-xl">
+                  <ShieldCheck size={32} className="text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                    Sertifikasi ISO
+                  </h3>
+                  <p className="text-red-600 dark:text-red-400 font-semibold text-sm md:text-base mt-1">
+                    Komitmen Internasional untuk Kualitas & Keselamatan
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+              {/* Left Side - Carousel Gambar */}
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7 }}
+                className="w-full lg:w-auto lg:flex-shrink-0"
+              >
+                <div className="relative flex flex-col items-center">
+                  {/* Image Only with Border Radius */}
+                  <motion.div
+                    key={currentISOIndex}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4 }}
+                    onClick={() => setSelectedImg(isoImages[currentISOIndex].src)}
+                    className="cursor-pointer"
+                  >
+                    <Image
+                      src={isoImages[currentISOIndex].src}
+                      alt={isoImages[currentISOIndex].alt}
+                      width={350}
+                      height={500}
+                      className="object-contain rounded-2xl max-w-[280px] md:max-w-[350px] shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </motion.div>
+
+                  {/* Navigation Buttons */}
+                  <div className="flex gap-3 mt-6">
+                    <button
+                      onClick={prevISO}
+                      className="w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+                    
+                    {/* Dots Indicator */}
+                    <div className="flex items-center gap-2 px-2">
+                      {isoImages.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentISOIndex(idx)}
+                          className={`transition-all duration-300 rounded-full ${
+                            idx === currentISOIndex 
+                              ? "w-6 h-2 bg-red-600" 
+                              : "w-2 h-2 bg-gray-400 dark:bg-gray-600 hover:bg-red-400"
+                          }`}
+                        />
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={nextISO}
+                      className="w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Certificate Info */}
-              <div className="flex-1 space-y-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-red-500 p-3 rounded-xl">
-                    <ShieldCheck size={32} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
-                      Sertifikasi ISO
-                    </h3>
-                      <p className="text-red-600 dark:text-red-400 font-semibold">
-                      Standar Manajemen Mutu Internasional
-                    </p>
-                  </div>
+              {/* Right Side - Content */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="flex-1 space-y-8"
+              >
+                {/* Main Description */}
+                <div className="space-y-4">
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base md:text-lg">
+                    CV. Kurnia Jaya Teknik telah memperoleh sertifikasi <strong>ISO 9001:2015</strong> untuk Sistem Manajemen Mutu dan <strong>ISO 45001:2018</strong> untuk Sistem Manajemen Keselamatan dan Kesehatan Kerja. Komitmen kami terhadap standar internasional menjamin kualitas layanan dan keselamatan dalam setiap proyek yang kami jalankan.
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
+                    Sertifikasi ini mencerminkan dedikasi tim kami dalam memberikan layanan terbaik sambil memastikan lingkungan kerja yang aman dan kondusif bagi seluruh stakeholder.
+                  </p>
                 </div>
 
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base md:text-lg">
-                  CV. Kurnia Jaya Teknik telah menerima <strong>Surat Pemberitahuan Proses Sertifikasi ISO</strong>, 
-                  yang menunjukkan komitmen kami terhadap standar kualitas internasional dalam layanan rekayasa 
-                  mekanikal, elektrikal, dan otomasi.
-                </p>
+                {/* Features with Bullet Points - 2 Columns */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2.5 flex-shrink-0"></div>
+                    <div>
+                      <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">Manajemen Mutu (ISO 9001)</p>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1.5">Sistem pengendalian kualitas yang terdokumentasi dan terstandar untuk konsistensi layanan.</p>
+                    </div>
+                  </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2.5 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">Manajemen Mutu</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Sistem terdokumentasi & terstandar</p>
+                      <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">Keselamatan & Kesehatan (ISO 45001)</p>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1.5">Manajemen risiko kerja yang komprehensif untuk melindungi setiap anggota tim.</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2.5 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">Kepuasan Pelanggan</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Fokus pada kebutuhan klien</p>
+                      <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">Kepuasan Pelanggan</p>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1.5">Fokus pada kebutuhan klien dan kepuasan maksimal dalam setiap aspek layanan.</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2.5 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">Perbaikan Berkelanjutan</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Evaluasi & optimasi proses</p>
+                      <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">Perbaikan Berkelanjutan</p>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1.5">Evaluasi dan optimasi proses secara rutin untuk peningkatan berkelanjutan.</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2"></div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2.5 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">Kredibilitas Global</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Pengakuan internasional</p>
+                      <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">Kredibilitas Global</p>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1.5">Pengakuan internasional dan kepercayaan dari klien dan mitra global.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-600 rounded-full mt-2.5 flex-shrink-0"></div>
+                    <div>
+                      <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">Audit Berkala</p>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1.5">Pemeriksaan rutin oleh badan independen untuk memastikan kepatuhan standar.</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -235,24 +340,39 @@ const Spend: FC = () => {
           onClick={() => setSelectedImg(null)}
         >
           <div
-            className="relative max-w-4xl max-h-[85vh]"
+            className="relative max-w-4xl max-h-[85vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={selectedImg}
-              alt="Preview"
-              width={900}
-              height={1200}
-              className="object-contain rounded-lg max-h-[85vh]"
-              draggable={false}
-            />
-
-            <button
-              className="absolute -top-3 -right-3 bg-red-600 text-white w-9 h-9 rounded-full 
-              flex items-center justify-center text-xl shadow-lg hover:bg-red-700"
-              onClick={() => setSelectedImg(null)}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="relative"
             >
-              ✕
+              <Image
+                src={selectedImg}
+                alt="Preview"
+                width={900}
+                height={1200}
+                className="object-contain rounded-lg max-h-[85vh] cursor-pointer hover:opacity-90 transition-opacity"
+                draggable={false}
+                onClick={() => setSelectedImg(null)}
+              />
+            </motion.div>
+
+            {/* Navigation Buttons in Modal */}
+            <button
+              onClick={prevISO}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 bg-white/20 hover:bg-white/40 text-white rounded-full shadow-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            
+            <button
+              onClick={nextISO}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 bg-white/20 hover:bg-white/40 text-white rounded-full shadow-lg transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
+            >
+              <ChevronRight size={24} />
             </button>
           </div>
         </motion.div>
