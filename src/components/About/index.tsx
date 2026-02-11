@@ -173,8 +173,8 @@ const About = () => {
             },
             {
               icon: "solar:heart-bold",
-              title: "Melayani Jawa Timur",
-              text: "Menyediakan akses mudah terhadap peralatan listrik berkualitas di seluruh Jawa Timur.",
+              title: "Melayani Seluruh Indonesia",
+              text: "Menyediakan akses mudah terhadap peralatan listrik berkualitas di seluruh Indonesia.",
             },
           ].map((item, i) => (
             <div
